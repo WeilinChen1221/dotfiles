@@ -1,9 +1,11 @@
 [user]
 	name = Weylin Chen
-	email = chenweilin1221@gmail.com
+	email = {{ .email | quote }}
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[init]
+    defaultBranch = main
