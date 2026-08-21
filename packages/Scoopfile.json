@@ -1,0 +1,252 @@
+﻿{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": {
+                "value": "\/Date(1785632388000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Sunday, August 2, 2026 8:59:48 AM"
+            },
+            "Manifests": 1618
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": {
+                "value": "\/Date(1785632392000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Sunday, August 2, 2026 8:59:52 AM"
+            },
+            "Manifests": 2357
+        },
+        {
+            "Name": "confetti",
+            "Source": "https://github.com/starise/Scoop-Confetti",
+            "Updated": {
+                "value": "\/Date(1781715022000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Thursday, June 18, 2026 12:50:22 AM"
+            },
+            "Manifests": 55
+        },
+        {
+            "Name": "minecraft",
+            "Source": "https://github.com/The-Simples/scoop-minecraft",
+            "Updated": {
+                "value": "\/Date(1784961061000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Saturday, July 25, 2026 2:31:01 PM"
+            },
+            "Manifests": 21
+        },
+        {
+            "Name": "siku",
+            "Source": "https://github.com/amorphobia/siku",
+            "Updated": {
+                "value": "\/Date(1785604730000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Sunday, August 2, 2026 1:18:50 AM"
+            },
+            "Manifests": 104
+        }
+    ],
+    "apps": [
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "7zip",
+            "Version": "26.02",
+            "Updated": "\/Date(1785215434519)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "aria2",
+            "Version": "1.37.0-1",
+            "Updated": "\/Date(1772589753170)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "autohotkey",
+            "Version": "2.0.26",
+            "Updated": "\/Date(1785215495767)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "chezmoi",
+            "Version": "2.71.1",
+            "Updated": "\/Date(1787320730591)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "crystaldiskinfo",
+            "Version": "9.9.2",
+            "Updated": "\/Date(1785646180230)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "Czkawka",
+            "Version": "12.0.1",
+            "Updated": "\/Date(1785646185884)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "dust",
+            "Version": "1.2.4",
+            "Updated": "\/Date(1775704120257)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "everything",
+            "Version": "1.4.1.1032",
+            "Updated": "\/Date(1772515545987)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "fastfetch",
+            "Version": "2.66.0",
+            "Updated": "\/Date(1785044345553)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "ffmpeg-shared",
+            "Version": "8.1.2",
+            "Updated": "\/Date(1783424180800)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "gh",
+            "Version": "2.97.0",
+            "Updated": "\/Date(1785646188105)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "git-crypt",
+            "Version": "0.7.0",
+            "Updated": "\/Date(1783394210733)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "hwinfo",
+            "Version": "8.50-6020",
+            "Updated": "\/Date(1785215509473)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "innounp",
+            "Version": "2.70.1",
+            "Updated": "\/Date(1785646189336)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "jpegview",
+            "Version": "1.0.37",
+            "Updated": "\/Date(1776156744219)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "kopia",
+            "Version": "0.23.1",
+            "Updated": "\/Date(1785646192262)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "locale-emulator",
+            "Version": "2.5.0.1",
+            "Updated": "\/Date(1781271529754)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "mingit",
+            "Version": "2.55.0.3",
+            "Updated": "\/Date(1785646198492)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "Mp3tag",
+            "Version": "3.35.1",
+            "Updated": "\/Date(1785646203851)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "mpv",
+            "Version": "0.41.0",
+            "Updated": "\/Date(1781779734398)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "musicbee",
+            "Version": "3.6.9403",
+            "Updated": "\/Date(1779272161109)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "OpenList",
+            "Version": "4.2.4",
+            "Updated": "\/Date(1785646209820)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "rclone",
+            "Version": "1.75.0",
+            "Updated": "\/Date(1785646214284)\/"
+        },
+        {
+            "Info": "",
+            "Source": "confetti",
+            "Name": "sacd-extract",
+            "Version": "0.3.9.3",
+            "Updated": "\/Date(1779444751306)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "tre-command",
+            "Version": "0.4.0",
+            "Updated": "\/Date(1776344755196)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "uv",
+            "Version": "0.11.11",
+            "Updated": "\/Date(1778411609642)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "windows-terminal",
+            "Version": "1.24.10621.0",
+            "Updated": "\/Date(1773587980818)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "yt-dlp",
+            "Version": "2026.07.04",
+            "Updated": "\/Date(1785410058502)\/"
+        }
+    ]
+}
