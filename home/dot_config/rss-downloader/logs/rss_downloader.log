@@ -461,3 +461,8 @@ BaseExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
 2026-08-22 15:34:22 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
 2026-08-22 15:34:22 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
 2026-08-22 15:34:22 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 17:45:30 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 17:45:33 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 400 Bad Request"
+2026-08-22 17:45:33 | ERROR    | rss_downloader.services  : 106 - 初始化 Aria2 客户端失败，任务将无法下载。(无法连接到 Aria2，请检查配置或服务状态)
+2026-08-22 17:45:33 | WARNING  | rss_downloader.services  : 145 - 未配置任何下载器，无法下载内容
+2026-08-22 17:45:33 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml
