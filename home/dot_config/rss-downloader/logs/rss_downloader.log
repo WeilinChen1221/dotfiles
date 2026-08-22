@@ -1,0 +1,463 @@
+2026-08-22 13:09:57 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 13:09:57 | WARNING  | rss_downloader.services  : 145 - 未配置任何下载器，无法下载内容
+2026-08-22 13:09:58 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 13:09:58 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 13:09:58 | INFO     | logging                  :1744 - Started server process [2568]
+2026-08-22 13:09:58 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 13:09:58 | INFO     | rss_downloader.main      : 180 - 共获取到 0 个条目，匹配到 0 个条目，成功添加 0 个下载任务。
+2026-08-22 13:09:58 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 13:09:58 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-22 13:10:06 | INFO     | logging                  :1744 - 127.0.0.1:60226 - "GET / HTTP/1.1" 200
+2026-08-22 13:10:06 | INFO     | logging                  :1744 - 127.0.0.1:60226 - "GET /static/css/output.css HTTP/1.1" 200
+2026-08-22 13:10:06 | INFO     | logging                  :1744 - 127.0.0.1:60226 - "GET /favicon.ico HTTP/1.1" 404
+2026-08-22 13:11:21 | INFO     | logging                  :1744 - Shutting down
+2026-08-22 13:11:21 | INFO     | logging                  :1744 - Waiting for application shutdown.
+2026-08-22 13:11:21 | INFO     | logging                  :1744 - Application shutdown complete.
+2026-08-22 13:11:21 | INFO     | logging                  :1744 - Finished server process [2568]
+2026-08-22 13:11:21 | INFO     | rss_downloader           :  66 - 程序被用户中断
+2026-08-22 13:11:21 | INFO     | rss_downloader.services  : 165 - 服务已关闭。
+2026-08-22 13:26:27 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 13:26:28 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:26:28 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 13:26:28 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 13:26:28 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 13:26:28 | INFO     | logging                  :1744 - Started server process [3564]
+2026-08-22 13:26:28 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 13:26:28 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 13:26:28 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 13:26:28 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 13:26:28 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-22 13:26:29 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 13:26:29 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 13:26:29 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-22 13:26:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:26:29 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 13:26:29 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): 【喵萌奶茶屋】★07月新番★[花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai][06][1080p][繁体]
+2026-08-22 13:26:29 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): 【喵萌奶茶屋】★07月新番★[花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai][06][1080p][简体]
+2026-08-22 13:26:29 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): 花织同学转生之后还是想干架 - EP06 [简／繁] (1080p H.264 AAC SRTx2) {花织即使是转生也想打架 | 花织さんは転生しても喧哗がしたい}
+2026-08-22 13:26:29 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [Nix-Raws] 花织同学转生后还是想干架 / Hanaori-san wa Tensei Shite mo Kenka ga Shitai S01E06 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 13:26:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:26:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:26:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [ANi]  花织即使是转生也想打架 - 06 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]
+2026-08-22 13:26:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 花织同学转生后还是想干架 / Hanaori - 06 (B-Global 1920x1080 HEVC AAC MKV)
+2026-08-22 13:26:29 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 5 个条目
+2026-08-22 13:26:29 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:26:29 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 1 - [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:26:29 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:26:29 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 2 - [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:26:29 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:26:29 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 3 - [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:26:29 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:26:29 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 4 - [ANi]  花织即使是转生也想打架 - 06 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]
+2026-08-22 13:26:29 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:26:29 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 5 - [黒ネズミたち] 花织同学转生后还是想干架 / Hanaori - 06 (B-Global 1920x1080 HEVC AAC MKV)
+2026-08-22 13:26:29 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 5 个条目，成功添加 5 个下载任务。
+2026-08-22 13:26:42 | INFO     | logging                  :1744 - 127.0.0.1:61228 - "GET / HTTP/1.1" 200
+2026-08-22 13:26:42 | INFO     | logging                  :1744 - 127.0.0.1:61228 - "GET /static/css/output.css HTTP/1.1" 200
+2026-08-22 13:27:23 | INFO     | logging                  :1744 - 127.0.0.1:61387 - "GET / HTTP/1.1" 200
+2026-08-22 13:27:24 | INFO     | logging                  :1744 - 127.0.0.1:61387 - "GET / HTTP/1.1" 200
+2026-08-22 13:27:29 | INFO     | logging                  :1744 - 127.0.0.1:61395 - "GET /config-page HTTP/1.1" 200
+2026-08-22 13:27:29 | INFO     | logging                  :1744 - 127.0.0.1:61395 - "GET /config HTTP/1.1" 200
+2026-08-22 13:27:39 | INFO     | logging                  :1744 - 127.0.0.1:61398 - "GET / HTTP/1.1" 200
+2026-08-22 13:29:11 | INFO     | logging                  :1744 - 127.0.0.1:61413 - "GET / HTTP/1.1" 200
+2026-08-22 13:29:11 | INFO     | logging                  :1744 - 127.0.0.1:61413 - "GET /static/css/output.css HTTP/1.1" 304
+2026-08-22 13:38:08 | INFO     | logging                  :1744 - 127.0.0.1:61545 - "GET / HTTP/1.1" 200
+2026-08-22 13:38:08 | INFO     | logging                  :1744 - 127.0.0.1:61545 - "GET /static/css/output.css HTTP/1.1" 304
+2026-08-22 13:38:37 | INFO     | logging                  :1744 - Shutting down
+2026-08-22 13:38:37 | INFO     | logging                  :1744 - Waiting for application shutdown.
+2026-08-22 13:38:37 | INFO     | logging                  :1744 - Application shutdown complete.
+2026-08-22 13:38:37 | INFO     | logging                  :1744 - Finished server process [3564]
+2026-08-22 13:38:37 | INFO     | rss_downloader           :  66 - 程序被用户中断
+2026-08-22 13:38:37 | INFO     | rss_downloader.services  : 165 - 服务已关闭。
+2026-08-22 13:46:09 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 13:46:09 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:46:09 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 13:46:10 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 13:46:10 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 13:46:10 | INFO     | logging                  :1744 - Started server process [3804]
+2026-08-22 13:46:10 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 13:46:10 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 13:46:10 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 13:46:10 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 13:46:10 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-22 13:46:10 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 13:46:10 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 13:46:10 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-22 13:46:10 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:46:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 13:46:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): 【喵萌奶茶屋】★07月新番★[花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai][06][1080p][繁体]
+2026-08-22 13:46:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): 【喵萌奶茶屋】★07月新番★[花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai][06][1080p][简体]
+2026-08-22 13:46:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): 花织同学转生之后还是想干架 - EP06 [简／繁] (1080p H.264 AAC SRTx2) {花织即使是转生也想打架 | 花织さんは転生しても喧哗がしたい}
+2026-08-22 13:46:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [Nix-Raws] 花织同学转生后还是想干架 / Hanaori-san wa Tensei Shite mo Kenka ga Shitai S01E06 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 13:46:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:46:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:46:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [ANi]  花织即使是转生也想打架 - 06 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]
+2026-08-22 13:46:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 花织同学转生后还是想干架 / Hanaori - 06 (B-Global 1920x1080 HEVC AAC MKV)
+2026-08-22 13:46:10 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 1 个条目
+2026-08-22 13:46:10 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:46:10 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 1 个条目，成功添加 0 个下载任务。
+2026-08-22 13:46:17 | INFO     | logging                  :1744 - 127.0.0.1:61783 - "GET / HTTP/1.1" 200
+2026-08-22 13:46:17 | INFO     | logging                  :1744 - 127.0.0.1:61783 - "GET /static/css/output.css HTTP/1.1" 304
+2026-08-22 13:46:19 | INFO     | logging                  :1744 - 127.0.0.1:61783 - "GET / HTTP/1.1" 200
+2026-08-22 13:46:53 | INFO     | logging                  :1744 - 127.0.0.1:61800 - "GET /config-page HTTP/1.1" 200
+2026-08-22 13:46:53 | INFO     | logging                  :1744 - 127.0.0.1:61800 - "GET /config HTTP/1.1" 200
+2026-08-22 13:47:11 | INFO     | logging                  :1744 - 127.0.0.1:61801 - "GET / HTTP/1.1" 200
+2026-08-22 13:47:14 | INFO     | logging                  :1744 - 127.0.0.1:61801 - "GET / HTTP/1.1" 200
+2026-08-22 13:52:23 | INFO     | logging                  :1744 - Shutting down
+2026-08-22 13:52:23 | INFO     | logging                  :1744 - Waiting for application shutdown.
+2026-08-22 13:52:23 | INFO     | logging                  :1744 - Application shutdown complete.
+2026-08-22 13:52:23 | INFO     | logging                  :1744 - Finished server process [3804]
+2026-08-22 13:52:23 | INFO     | rss_downloader           :  66 - 程序被用户中断
+2026-08-22 13:52:23 | INFO     | rss_downloader.services  : 165 - 服务已关闭。
+2026-08-22 13:52:31 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 13:52:32 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:52:32 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 13:52:32 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 13:52:32 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 13:52:32 | INFO     | logging                  :1744 - Started server process [7320]
+2026-08-22 13:52:32 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 13:52:32 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 13:52:32 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 13:52:32 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 13:52:32 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-22 13:52:32 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 13:52:33 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 13:52:33 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 18 个条目
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 画完这个再去死 / Kore Kaite Shine - 07 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 画完这个再去死 / Kore Kaite Shine - 07 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:52:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] BanG Dream！YUME∞MITA / BanG Dream! Yume∞Mita - 10 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] BanG Dream！YUME∞MITA / BanG Dream! Yume∞Mita - 10 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] BanG Dream！YUME∞MITA / BanG Dream! Yume∞Mita - 10 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:52:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 再见菈菈 / Sayonara Lara - 07 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 再见菈菈 / Sayonara Lara - 07 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 再见菈菈 / Sayonara Lara - 07 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 花织同学转生后还是想干架 / Hanaori - 06 (B-Global 1920x1080 HEVC AAC MKV)
+2026-08-22 13:52:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] Grow Up Show ～向日葵马戏团～ / Grow Up Show: Himawari no Circus-dan - 07 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:52:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] Grow Up Show ～向日葵马戏团～ / Grow Up Show: Himawari no Circus-dan - 07 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:52:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] Grow Up Show ～向日葵马戏团～ / Grow Up Show: Himawari no Circus-dan - 07 (ABEMA 1280x720 AVC AAC MKV)
+2026-08-22 13:52:33 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 5 个条目
+2026-08-22 13:52:33 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:52:33 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 1 - [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:52:33 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 2 - [黒ネズミたち] BanG Dream！YUME∞MITA / BanG Dream! Yume∞Mita - 10 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:52:33 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 3 - [黒ネズミたち] 再见菈菈 / Sayonara Lara - 07 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:52:33 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 4 - [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:52:33 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:52:33 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 5 - [黒ネズミたち] Grow Up Show ～向日葵马戏团～ / Grow Up Show: Himawari no Circus-dan - 07 (ABEMA 1280x720 AVC AAC MKV)
+2026-08-22 13:52:33 | INFO     | rss_downloader.main      : 180 - 共获取到 18 个条目，匹配到 5 个条目，成功添加 5 个下载任务。
+2026-08-22 13:56:40 | INFO     | logging                  :1744 - 127.0.0.1:62718 - "GET / HTTP/1.1" 200
+2026-08-22 13:56:40 | INFO     | logging                  :1744 - 127.0.0.1:62718 - "GET /static/css/output.css HTTP/1.1" 304
+2026-08-22 13:56:41 | INFO     | logging                  :1744 - 127.0.0.1:62718 - "GET / HTTP/1.1" 200
+2026-08-22 13:56:45 | INFO     | logging                  :1744 - 127.0.0.1:62718 - "GET /config-page HTTP/1.1" 200
+2026-08-22 13:56:46 | INFO     | logging                  :1744 - 127.0.0.1:62718 - "GET /config HTTP/1.1" 200
+2026-08-22 13:56:53 | INFO     | logging                  :1744 - 127.0.0.1:62726 - "PUT /config HTTP/1.1" 200
+2026-08-22 13:56:54 | INFO     | logging                  :1744 - 127.0.0.1:62726 - "GET / HTTP/1.1" 200
+2026-08-22 13:56:56 | INFO     | logging                  :1744 - Shutting down
+2026-08-22 13:56:56 | INFO     | logging                  :1744 - Waiting for application shutdown.
+2026-08-22 13:56:56 | INFO     | logging                  :1744 - Application shutdown complete.
+2026-08-22 13:56:56 | INFO     | logging                  :1744 - Finished server process [7320]
+2026-08-22 13:56:56 | INFO     | rss_downloader           :  66 - 程序被用户中断
+2026-08-22 13:56:56 | INFO     | rss_downloader.services  : 165 - 服务已关闭。
+2026-08-22 13:57:08 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 13:57:08 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:57:08 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 13:57:09 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 13:57:09 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 13:57:09 | INFO     | logging                  :1744 - Started server process [13740]
+2026-08-22 13:57:09 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 13:57:09 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 13:57:09 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 13:57:09 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 13:57:09 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-22 13:57:09 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 13:57:10 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 13:57:10 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 18 个条目
+2026-08-22 13:57:10 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 画完这个再去死 / Kore Kaite Shine - 07 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 画完这个再去死 / Kore Kaite Shine - 07 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] BanG Dream！YUME∞MITA / BanG Dream! Yume∞Mita - 10 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] BanG Dream！YUME∞MITA / BanG Dream! Yume∞Mita - 10 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] BanG Dream！YUME∞MITA / BanG Dream! Yume∞Mita - 10 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 再见菈菈 / Sayonara Lara - 07 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 再见菈菈 / Sayonara Lara - 07 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 再见菈菈 / Sayonara Lara - 07 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:57:10 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 花织同学转生后还是想干架 / Hanaori - 06 (B-Global 1920x1080 HEVC AAC MKV)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] Grow Up Show ～向日葵马戏团～ / Grow Up Show: Himawari no Circus-dan - 07 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] Grow Up Show ～向日葵马戏团～ / Grow Up Show: Himawari no Circus-dan - 07 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 13:57:10 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [黒ネズミたち] Grow Up Show ～向日葵马戏团～ / Grow Up Show: Himawari no Circus-dan - 07 (ABEMA 1280x720 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 6 个条目
+2026-08-22 13:57:10 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:57:10 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 1 - [黒ネズミたち] 画完这个再去死 / Kore Kaite Shine - 07 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:57:10 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 2 - [黒ネズミたち] BanG Dream！YUME∞MITA / BanG Dream! Yume∞Mita - 10 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:57:10 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 3 - [黒ネズミたち] 再见菈菈 / Sayonara Lara - 07 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:57:10 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 4 - [黒ネズミたち] 花织即使是转生也想打架 / Hanaori - 06 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:57:10 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 5 - [黒ネズミたち] Grow Up Show ～向日葵马戏团～ / Grow Up Show: Himawari no Circus-dan - 07 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 13:57:10 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 6 - [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 13:57:10 | INFO     | rss_downloader.main      : 180 - 共获取到 18 个条目，匹配到 6 个条目，成功添加 6 个下载任务。
+2026-08-22 13:57:27 | INFO     | logging                  :1744 - 127.0.0.1:63053 - "GET / HTTP/1.1" 200
+2026-08-22 13:57:27 | INFO     | logging                  :1744 - 127.0.0.1:63053 - "GET /favicon.ico HTTP/1.1" 404
+2026-08-22 13:57:28 | INFO     | logging                  :1744 - 127.0.0.1:63053 - "GET / HTTP/1.1" 200
+2026-08-22 14:04:51 | INFO     | logging                  :1744 - Shutting down
+2026-08-22 14:04:51 | INFO     | logging                  :1744 - Waiting for application shutdown.
+2026-08-22 14:04:51 | INFO     | logging                  :1744 - Application shutdown complete.
+2026-08-22 14:04:51 | INFO     | logging                  :1744 - Finished server process [13740]
+2026-08-22 14:04:51 | INFO     | rss_downloader           :  66 - 程序被用户中断
+2026-08-22 14:04:51 | INFO     | rss_downloader.services  : 165 - 服务已关闭。
+2026-08-22 14:48:09 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 14:48:10 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:48:10 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 14:48:10 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 14:48:10 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 14:48:10 | INFO     | logging                  :1744 - Started server process [14104]
+2026-08-22 14:48:10 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 14:48:10 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 14:48:10 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 14:48:10 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 14:48:10 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-22 14:48:11 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 14:48:11 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 14:48:11 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 7 个条目
+2026-08-22 14:48:11 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 14:48:11 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 14:48:11 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 14:48:11 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 14:48:11 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 14:48:11 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 14:48:11 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 14:48:11 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 7 个条目
+2026-08-22 14:48:11 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:48:11 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 1 - [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 14:48:11 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:48:11 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 2 - [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 14:48:11 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:48:11 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 3 - [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 14:48:11 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:48:11 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 4 - [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 14:48:11 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:48:11 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 5 - [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 14:48:11 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:48:11 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 6 - [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 14:48:11 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:48:11 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 7 - [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 14:48:11 | INFO     | rss_downloader.main      : 180 - 共获取到 7 个条目，匹配到 7 个条目，成功添加 7 个下载任务。
+2026-08-22 14:51:35 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 14:51:36 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:51:36 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 14:51:36 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 14:51:46 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 14:51:47 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:51:47 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 14:51:47 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 14:53:52 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 14:53:52 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:53:52 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 14:53:52 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 14:54:42 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 14:54:43 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:54:43 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 14:54:43 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 14:54:53 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 14:54:53 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 14:54:53 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 14:54:53 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 15:01:19 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 15:01:20 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 15:01:20 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 15:01:20 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 15:01:20 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 15:01:20 | INFO     | logging                  :1744 - Started server process [8592]
+2026-08-22 15:01:20 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 15:01:20 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 15:01:20 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 15:01:20 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-22 15:01:20 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 7 个条目
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 15:01:20 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 7 个条目
+2026-08-22 15:01:20 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:01:20 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:01:20 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 15:01:20 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:01:20 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 15:01:20 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 15:01:20 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 15:01:20 | INFO     | rss_downloader.main      : 180 - 共获取到 7 个条目，匹配到 7 个条目，成功添加 0 个下载任务。
+2026-08-22 15:01:45 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 15:01:45 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 15:01:45 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 15:01:45 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 15:01:45 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 15:01:45 | INFO     | logging                  :1744 - Started server process [12728]
+2026-08-22 15:01:45 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 15:01:45 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 15:01:45 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 15:01:45 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 15:01:45 | ERROR    | logging                  :1744 - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
+2026-08-22 15:01:45 | INFO     | logging                  :1744 - Waiting for application shutdown.
+2026-08-22 15:01:45 | INFO     | logging                  :1744 - Application shutdown complete.
+2026-08-22 15:01:45 | INFO     | rss_downloader.main      : 180 - 共获取到 0 个条目，匹配到 0 个条目，成功添加 0 个下载任务。
+2026-08-22 15:01:45 | INFO     | rss_downloader.services  : 165 - 服务已关闭。
+2026-08-22 15:01:45 | ERROR    | logging                  :1744 - unhandled exception during asyncio.run() shutdown
+task: <Task finished name='rss_downloader.async_main' coro=<async_main() done, defined at C:\Users\Admin\AppData\Roaming\uv\tools\rss-downloader\Lib\site-packages\anyio\_backends\_asyncio.py:2457> exception=BaseExceptionGroup('unhandled errors in a TaskGroup', [SystemExit(3)])>
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "C:\Users\Admin\.local\bin\rss-downloader.exe\__main__.py", line 10, in <module>
+
+  File "C:\Users\Admin\AppData\Roaming\uv\tools\rss-downloader\Lib\site-packages\rss_downloader\__init__.py", line 75, in main
+    anyio.run(async_main)
+    │     │   └ <function async_main at 0x0000020D7BFA8860>
+    │     └ <function run at 0x0000020D7C5ECEA0>
+    └ <module 'anyio' from 'C:\\Users\\Admin\\AppData\\Roaming\\uv\\tools\\rss-downloader\\Lib\\site-packages\\anyio\\__init__.py'>
+  File "C:\Users\Admin\AppData\Roaming\uv\tools\rss-downloader\Lib\site-packages\anyio\_core\_eventloop.py", line 83, in run
+    return async_backend.run(func, args, {}, backend_options)
+           │             │   │     │         └ {}
+           │             │   │     └ ()
+           │             │   └ <function async_main at 0x0000020D7BFA8860>
+           │             └ <classmethod(<function AsyncIOBackend.run at 0x0000020D7E65F920>)>
+           └ <class 'anyio._backends._asyncio.AsyncIOBackend'>
+  File "C:\Users\Admin\AppData\Roaming\uv\tools\rss-downloader\Lib\site-packages\anyio\_backends\_asyncio.py", line 2480, in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         │            │                   │                └ <asyncio.runners.Runner object at 0x0000020D7E590830>
+         │            │                   └ None
+         │            └ None
+         └ <class 'asyncio.runners.Runner'>
+  File "C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\runners.py", line 62, in __exit__
+    self.close()
+    │    └ <function Runner.close at 0x0000020D7E589E40>
+    └ <asyncio.runners.Runner object at 0x0000020D7E590830>
+  File "C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\runners.py", line 70, in close
+    _cancel_all_tasks(loop)
+    │                 └ <ProactorEventLoop running=False closed=False debug=False>
+    └ <function _cancel_all_tasks at 0x0000020D7E58A160>
+  File "C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\runners.py", line 212, in _cancel_all_tasks
+    loop.call_exception_handler({
+    │    └ <function BaseEventLoop.call_exception_handler at 0x0000020D7E5894E0>
+    └ <ProactorEventLoop running=False closed=False debug=False>
+  File "C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Future' objects>
+           └ <_GatheringFuture finished result=[BaseException...ystemExit(3)]), CancelledError(''), CancelledError(''), CancelledError('')...
+  File "C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 687, in run_forever
+    self._run_forever_cleanup()
+    │    └ <function ProactorEventLoop._run_forever_cleanup at 0x0000020D7E614400>
+    └ <ProactorEventLoop running=False closed=False debug=False>
+  File "C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 2043, in _run_once
+    handle = None  # Needed to break cycles when an exception occurs.
+  File "C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\events.py", line 105, in _run
+    self = None  # Needed to break cycles when an exception occurs.
+> File "C:\Users\Admin\AppData\Roaming\uv\tools\rss-downloader\Lib\site-packages\anyio\_backends\_asyncio.py", line 2464, in wrapper
+    return await func(*args)
+                 │     └ ()
+                 └ <function async_main at 0x0000020D7BFA8860>
+  File "C:\Users\Admin\AppData\Roaming\uv\tools\rss-downloader\Lib\site-packages\rss_downloader\__init__.py", line 57, in async_main
+    async with anyio.create_task_group() as tg:
+               │     │                      └ <anyio._backends._asyncio.TaskGroup object at 0x0000020D0106E490>
+               │     └ <function create_task_group at 0x0000020D7C6F4180>
+               └ <module 'anyio' from 'C:\\Users\\Admin\\AppData\\Roaming\\uv\\tools\\rss-downloader\\Lib\\site-packages\\anyio\\__init__.py'>
+  File "C:\Users\Admin\AppData\Roaming\uv\tools\rss-downloader\Lib\site-packages\anyio\_backends\_asyncio.py", line 815, in __aexit__
+    raise BaseExceptionGroup(
+
+BaseExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+2026-08-22 15:01:55 | INFO     | logging                  :1744 - 127.0.0.1:55176 - "GET / HTTP/1.1" 200
+2026-08-22 15:01:55 | INFO     | logging                  :1744 - 127.0.0.1:55176 - "GET /static/css/output.css HTTP/1.1" 304
+2026-08-22 15:10:23 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 15:10:23 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 15:10:23 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 15:10:24 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 15:10:24 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 15:10:24 | INFO     | logging                  :1744 - Started server process [2616]
+2026-08-22 15:10:24 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 15:10:24 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 15:10:24 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 15:10:24 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-22 15:10:24 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 7 个条目
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 15:10:24 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 7 个条目
+2026-08-22 15:10:24 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:10:24 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:10:24 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 15:10:24 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:10:24 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (ABEMA 1920x1080 AVC AAC MKV)
+2026-08-22 15:10:24 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (CR 1920x1080 AVC AAC MKV)
+2026-08-22 15:10:24 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (Baha 1920x1080 AVC AAC MP4)
+2026-08-22 15:10:24 | INFO     | rss_downloader.main      : 180 - 共获取到 7 个条目，匹配到 7 个条目，成功添加 0 个下载任务。
+2026-08-22 15:13:41 | INFO     | logging                  :1744 - 127.0.0.1:55291 - "GET / HTTP/1.1" 200
+2026-08-22 15:13:41 | INFO     | logging                  :1744 - 127.0.0.1:55291 - "GET /static/css/output.css HTTP/1.1" 304
+2026-08-22 15:13:43 | INFO     | logging                  :1744 - 127.0.0.1:55291 - "GET / HTTP/1.1" 200
+2026-08-22 15:13:57 | INFO     | logging                  :1744 - 127.0.0.1:55299 - "GET / HTTP/1.1" 200
+2026-08-22 15:13:57 | INFO     | logging                  :1744 - 127.0.0.1:55299 - "GET / HTTP/1.1" 200
+2026-08-22 15:26:24 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 15:26:25 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 15:26:25 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 15:26:25 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 15:26:25 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 15:26:25 | INFO     | logging                  :1744 - Started server process [11436]
+2026-08-22 15:26:25 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 15:26:25 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 15:26:25 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 15:26:25 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 15:26:25 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-22 15:26:26 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 15:26:26 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 15:26:26 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 7 个条目
+2026-08-22 15:26:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 15:26:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 15:26:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:26:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:26:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 15:26:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 再见菈菈 / さよなら ララ / Sayonara Lara S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 15:26:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:26:26 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 7 个条目
+2026-08-22 15:26:26 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 15:26:26 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 8 - [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 15:26:26 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 15:26:26 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 9 - [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 15:26:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:26:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:26:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 15:26:26 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 15:26:26 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 10 - [Nix-Raws] 再见菈菈 / さよなら ララ / Sayonara Lara S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 15:26:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 15:26:26 | INFO     | rss_downloader.main      : 180 - 共获取到 7 个条目，匹配到 7 个条目，成功添加 3 个下载任务。
+2026-08-22 15:34:21 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 15:34:22 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 15:34:22 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 15:34:22 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml

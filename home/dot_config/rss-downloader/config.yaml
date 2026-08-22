@@ -1,0 +1,28 @@
+log:
+  level: INFO
+web:
+  enabled: true
+  host: 127.0.0.1
+  port: 8000
+  interval_hours: 1
+aria2:
+  rpc: http://127.0.0.1:6800/jsonrpc
+  secret: MyAria2SecretTokencwl041221
+  dir: C:/Users/Admin/Downloads/aria2/rss
+qbittorrent:
+  host: null
+  username: null
+  password: null
+transmission:
+  host: null
+  username: null
+  password: null
+webhooks: []
+feeds:
+- name: Example
+  url: https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d
+  include: []
+  exclude:
+  - "合集|补档|内嵌"
+  downloader: aria2
+  content_extractor: mikan
