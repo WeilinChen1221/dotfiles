@@ -23,6 +23,6 @@ feeds:
   url: https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d
   include: []
   exclude:
-  - "合集|补档|内嵌"
+  - "合集|补档|内嵌|ABEMA|Baha"
   downloader: aria2
   content_extractor: mikan

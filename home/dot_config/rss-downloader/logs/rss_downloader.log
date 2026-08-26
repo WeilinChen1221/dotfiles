@@ -466,3 +466,983 @@ BaseExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
 2026-08-22 17:45:33 | ERROR    | rss_downloader.services  : 106 - 初始化 Aria2 客户端失败，任务将无法下载。(无法连接到 Aria2，请检查配置或服务状态)
 2026-08-22 17:45:33 | WARNING  | rss_downloader.services  : 145 - 未配置任何下载器，无法下载内容
 2026-08-22 17:45:33 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 17:48:59 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-22 17:48:59 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 17:48:59 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-22 17:49:00 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-22 17:49:00 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-22 17:49:00 | INFO     | logging                  :1744 - Started server process [14132]
+2026-08-22 17:49:00 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-22 17:49:00 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 17:49:00 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-22 17:49:00 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-22 17:49:00 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 9 个条目
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 17:49:00 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-22 17:49:00 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 17:49:00 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 7 个条目
+2026-08-22 17:49:00 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 17:49:00 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 17:49:00 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 17:49:00 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 17:49:00 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-22 17:49:00 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 11 - [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 17:49:00 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 17:49:00 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 17:49:00 | INFO     | rss_downloader.main      : 180 - 共获取到 9 个条目，匹配到 7 个条目，成功添加 1 个下载任务。
+2026-08-22 18:49:00 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 18:49:00 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 18:49:01 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 18:49:01 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 18:49:01 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 9 个条目
+2026-08-22 18:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 18:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 18:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 18:49:01 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-22 18:49:01 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-22 18:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 18:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 18:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 18:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 18:49:01 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 7 个条目
+2026-08-22 18:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 18:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 18:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 18:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 18:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 18:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 18:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 18:49:01 | INFO     | rss_downloader.main      : 180 - 共获取到 9 个条目，匹配到 7 个条目，成功添加 0 个下载任务。
+2026-08-22 19:49:01 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 19:49:01 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 9 个条目
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 19:49:01 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-22 19:49:01 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 19:49:01 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 7 个条目
+2026-08-22 19:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 19:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 19:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 19:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 19:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 19:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 19:49:01 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 19:49:01 | INFO     | rss_downloader.main      : 180 - 共获取到 9 个条目，匹配到 7 个条目，成功添加 0 个下载任务。
+2026-08-22 20:49:01 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 20:49:01 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 20:49:02 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 20:49:02 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 20:49:02 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 9 个条目
+2026-08-22 20:49:02 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 20:49:02 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 20:49:02 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 20:49:02 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-22 20:49:02 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-22 20:49:02 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 20:49:02 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 20:49:02 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 20:49:02 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 20:49:02 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 7 个条目
+2026-08-22 20:49:02 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 20:49:02 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 20:49:02 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 20:49:02 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 20:49:02 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 20:49:02 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 20:49:02 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 20:49:02 | INFO     | rss_downloader.main      : 180 - 共获取到 9 个条目，匹配到 7 个条目，成功添加 0 个下载任务。
+2026-08-22 21:49:02 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 21:49:02 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 21:49:03 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 21:49:03 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 21:49:03 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 9 个条目
+2026-08-22 21:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 21:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 21:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 21:49:03 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-22 21:49:03 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-22 21:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 21:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 21:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 21:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 21:49:03 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 7 个条目
+2026-08-22 21:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 21:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 21:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 21:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 21:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 21:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 21:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 21:49:03 | INFO     | rss_downloader.main      : 180 - 共获取到 9 个条目，匹配到 7 个条目，成功添加 0 个下载任务。
+2026-08-22 22:49:03 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-22 22:49:03 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 9 个条目
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 22:49:03 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-22 22:49:03 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 22:49:03 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 7 个条目
+2026-08-22 22:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 22:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-22 22:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 22:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 22:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-22 22:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-22 22:49:03 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-22 22:49:03 | INFO     | rss_downloader.main      : 180 - 共获取到 9 个条目，匹配到 7 个条目，成功添加 0 个下载任务。
+2026-08-23 09:47:34 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-23 09:47:35 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-23 09:47:35 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-23 09:47:35 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-23 09:47:35 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-23 09:47:35 | INFO     | logging                  :1744 - Started server process [3648]
+2026-08-23 09:47:35 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-23 09:47:35 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 09:47:35 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 09:47:35 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-23 09:47:35 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-23 09:47:36 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 09:47:36 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 09:47:36 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 09:47:36 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 09:47:36 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-23 09:47:36 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 12 - [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 09:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 09:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 09:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 09:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 09:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 09:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 09:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 09:47:36 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 1 个下载任务。
+2026-08-23 10:47:36 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 10:47:36 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 10:47:36 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 10:47:36 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 10:47:36 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 10:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 10:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 10:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 10:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 10:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 10:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 10:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 10:47:36 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 10:47:36 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 11:47:36 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 11:47:36 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 11:47:37 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 11:47:37 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 11:47:37 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 11:47:37 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 11:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 11:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 11:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 11:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 11:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 11:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 11:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 11:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 11:47:37 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 12:47:37 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 12:47:37 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 12:47:37 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 12:47:37 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 12:47:37 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 12:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 12:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 12:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 12:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 12:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 12:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 12:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 12:47:37 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 12:47:37 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 13:47:37 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 13:47:37 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 13:47:38 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 13:47:38 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 13:47:38 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 13:47:38 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 13:47:38 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 13:47:38 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 13:47:38 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 13:47:38 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 13:47:38 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 13:47:38 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 13:47:38 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 13:47:38 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 13:47:38 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 14:47:38 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 14:47:38 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 14:47:39 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 14:47:39 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 14:47:39 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 14:47:39 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 14:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 14:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 14:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 14:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 14:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 14:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 14:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 14:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 14:47:39 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 15:47:39 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 15:47:39 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 15:47:39 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 15:47:39 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 15:47:39 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 15:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 15:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 15:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 15:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 15:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 15:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 15:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 15:47:39 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 15:47:39 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 16:47:39 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 16:47:39 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 16:47:40 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 16:47:40 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 16:47:40 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 16:47:40 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 16:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 16:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 16:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 16:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 16:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 16:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 16:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 16:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 16:47:40 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 17:47:40 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 17:47:40 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 17:47:40 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 17:47:40 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 17:47:40 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 17:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 17:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 17:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 17:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 17:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 17:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 17:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 17:47:40 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 17:47:40 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 18:47:40 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 18:47:40 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 18:47:41 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 18:47:41 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 18:47:41 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 18:47:41 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 18:47:41 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 18:47:41 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 18:47:41 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 18:47:41 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 18:47:41 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 18:47:41 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 18:47:41 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 18:47:41 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 18:47:41 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 19:47:41 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 19:47:41 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 19:47:42 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 19:47:42 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 19:47:42 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 19:47:42 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 19:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 19:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 19:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 19:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 19:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 19:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 19:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 19:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 19:47:42 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 20:47:42 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 20:47:42 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 20:47:42 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 20:47:42 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 20:47:42 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 20:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 20:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 20:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 20:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 20:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 20:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 20:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 20:47:42 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 20:47:42 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 21:47:42 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 21:47:42 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 21:47:43 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 21:47:43 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 21:47:43 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 21:47:43 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-23 21:47:43 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 21:47:43 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 21:47:43 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 21:47:43 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 21:47:43 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 21:47:43 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 21:47:43 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 21:47:43 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 21:47:43 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-23 22:47:43 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-23 22:47:43 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-23 22:47:44 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 11 个条目
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 22:47:44 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-23 22:47:44 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 22:47:44 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 9 个条目
+2026-08-23 22:47:45 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-23 22:47:45 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 13 - [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 22:47:45 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 22:47:45 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 22:47:45 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-23 22:47:45 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 22:47:45 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 22:47:45 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-23 22:47:45 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-23 22:47:45 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-23 22:47:45 | INFO     | rss_downloader.main      : 180 - 共获取到 11 个条目，匹配到 9 个条目，成功添加 1 个下载任务。
+2026-08-24 09:57:23 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-24 09:57:24 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-24 09:57:24 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-24 09:57:25 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-24 09:57:25 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-24 09:57:25 | INFO     | logging                  :1744 - Started server process [7260]
+2026-08-24 09:57:25 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-24 09:57:25 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 09:57:25 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 09:57:25 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-24 09:57:25 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-24 09:57:26 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 09:57:26 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 09:57:26 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 09:57:26 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 09:57:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 09:57:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 09:57:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 09:57:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 09:57:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 09:57:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 09:57:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 09:57:26 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 09:57:26 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 09:57:48 | INFO     | logging                  :1744 - 127.0.0.1:51315 - "GET / HTTP/1.1" 200
+2026-08-24 09:57:48 | INFO     | logging                  :1744 - 127.0.0.1:51315 - "GET /static/css/output.css HTTP/1.1" 200
+2026-08-24 09:57:48 | INFO     | logging                  :1744 - 127.0.0.1:51315 - "GET /favicon.ico HTTP/1.1" 404
+2026-08-24 09:59:04 | INFO     | logging                  :1744 - 127.0.0.1:52011 - "GET / HTTP/1.1" 200
+2026-08-24 09:59:13 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-24 09:59:13 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 14 - [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 09:59:13 | INFO     | logging                  :1744 - 127.0.0.1:52201 - "POST /redownload HTTP/1.1" 200
+2026-08-24 09:59:15 | INFO     | logging                  :1744 - 127.0.0.1:52201 - "GET / HTTP/1.1" 200
+2026-08-24 10:21:05 | INFO     | logging                  :1744 - 127.0.0.1:52908 - "GET / HTTP/1.1" 200
+2026-08-24 10:57:26 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 10:57:26 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 10:57:27 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 10:57:27 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 10:57:27 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 10:57:27 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 10:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 10:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 10:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 10:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 10:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 10:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 10:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 10:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 10:57:27 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 11:57:26 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 11:57:26 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 11:57:27 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 11:57:27 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 11:57:27 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 11:57:27 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 11:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 11:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 11:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 11:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 11:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 11:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 11:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 11:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 11:57:27 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 12:57:27 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 12:57:27 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 12:57:27 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 12:57:27 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 12:57:27 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 12:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 12:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 12:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 12:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 12:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 12:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 12:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 12:57:27 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 12:57:27 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 13:57:27 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 13:57:27 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 13:57:28 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 13:57:28 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 13:57:28 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 13:57:28 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 13:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 13:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 13:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 13:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 13:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 13:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 13:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 13:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 13:57:28 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 14:11:01 | INFO     | logging                  :1744 - 127.0.0.1:58509 - "GET / HTTP/1.1" 200
+2026-08-24 14:11:01 | INFO     | logging                  :1744 - 127.0.0.1:58509 - "GET /static/css/output.css HTTP/1.1" 200
+2026-08-24 14:57:28 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 14:57:28 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 14:57:28 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 14:57:28 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 14:57:28 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 14:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 14:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 14:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 14:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 14:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 14:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 14:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 14:57:28 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 14:57:28 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 15:57:28 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 15:57:28 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 15:57:29 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 15:57:29 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 15:57:29 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 15:57:29 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 15:57:29 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 15:57:29 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 15:57:29 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 15:57:29 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 15:57:29 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 15:57:29 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 15:57:29 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 15:57:29 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 15:57:29 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 16:57:29 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 16:57:29 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 16:57:30 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 16:57:30 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 16:57:30 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 16:57:30 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 16:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 16:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 16:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 16:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 16:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 16:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 16:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 16:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 16:57:30 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 17:57:30 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 17:57:30 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 17:57:30 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 17:57:30 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 17:57:30 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 17:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 17:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 17:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 17:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 17:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 17:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 17:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 17:57:30 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 17:57:30 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 18:57:30 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 18:57:30 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 18:57:31 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 18:57:31 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 18:57:31 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 18:57:31 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 18:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 18:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 18:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 18:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 18:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 18:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 18:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 18:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 18:57:31 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 19:57:31 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 19:57:31 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 19:57:31 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 19:57:31 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 19:57:31 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 19:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 19:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 19:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 19:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 19:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 19:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 19:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 19:57:31 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 19:57:31 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 20:57:31 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 20:57:31 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 20:57:32 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 20:57:32 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 20:57:32 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 20:57:32 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 20:57:32 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 20:57:32 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 20:57:32 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 20:57:32 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 20:57:32 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 20:57:32 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 20:57:32 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 20:57:32 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 20:57:32 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 21:57:32 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 21:57:32 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 21:57:33 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 21:57:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 21:57:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 21:57:33 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 21:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 21:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 21:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 21:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 21:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 21:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 21:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 21:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 21:57:33 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-24 22:57:33 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-24 22:57:33 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 10 个条目
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 22:57:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-24 22:57:33 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 22:57:33 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 8 个条目
+2026-08-24 22:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 22:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 22:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 22:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-24 22:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 22:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-24 22:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-24 22:57:33 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-24 22:57:33 | INFO     | rss_downloader.main      : 180 - 共获取到 10 个条目，匹配到 8 个条目，成功添加 0 个下载任务。
+2026-08-25 09:52:06 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-25 09:52:07 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-25 09:52:07 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-25 09:52:07 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-25 09:52:07 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-25 09:52:07 | INFO     | logging                  :1744 - Started server process [12808]
+2026-08-25 09:52:07 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-25 09:52:07 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-25 09:52:07 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-25 09:52:07 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-25 09:52:07 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-25 09:52:08 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 12 个条目
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / Sayonara Lara [07][WebRip][HEVC_AAC][繁日内嵌]
+2026-08-25 09:52:08 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / Sayonara Lara [07][WebRip][HEVC_AAC][简日内嵌]
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 10 个条目
+2026-08-25 09:52:08 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 15 - [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 16 - [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [北宇治字幕组] 再见，菈菈 / 再见，拉拉 / 再见，菈菈 / Sayonara Lara [06][WebRip][HEVC_AAC][简繁日内封]
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-25 09:52:08 | INFO     | rss_downloader.main      : 180 - 共获取到 12 个条目，匹配到 10 个条目，成功添加 2 个下载任务。
+2026-08-25 10:07:10 | INFO     | logging                  :1744 - 127.0.0.1:55740 - "GET / HTTP/1.1" 200
+2026-08-25 10:07:10 | INFO     | logging                  :1744 - 127.0.0.1:55740 - "GET /static/css/output.css HTTP/1.1" 200
+2026-08-25 10:07:10 | INFO     | logging                  :1744 - 127.0.0.1:55740 - "GET /favicon.ico HTTP/1.1" 404
+2026-08-25 10:07:19 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-25 10:07:19 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 17 - [黒ネズミたち] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 (Baha 1920x1080 AVC AAC MP4)
+2026-08-25 10:07:19 | INFO     | logging                  :1744 - 127.0.0.1:55770 - "POST /redownload HTTP/1.1" 200
+2026-08-25 10:07:21 | INFO     | logging                  :1744 - 127.0.0.1:55770 - "GET / HTTP/1.1" 200
+2026-08-25 10:07:32 | INFO     | logging                  :1744 - 127.0.0.1:55893 - "GET /?title=09 HTTP/1.1" 200
+2026-08-25 10:07:34 | INFO     | logging                  :1744 - 127.0.0.1:55893 - "GET / HTTP/1.1" 200
+2026-08-26 09:39:20 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-26 09:39:21 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-26 09:39:21 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-26 09:39:21 | INFO     | rss_downloader           :  53 - 启动 Web 界面: http://127.0.0.1:8000
+2026-08-26 09:39:21 | INFO     | rss_downloader.config    : 228 - 正在监控配置文件: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-26 09:39:22 | INFO     | logging                  :1744 - Started server process [9284]
+2026-08-26 09:39:22 | INFO     | logging                  :1744 - Waiting for application startup.
+2026-08-26 09:39:22 | INFO     | rss_downloader.main      : 163 - 处理 RSS 源: Example (https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d)
+2026-08-26 09:39:22 | INFO     | rss_downloader.parser    :  68 - 开始获取 RSS 源: Example
+2026-08-26 09:39:22 | INFO     | logging                  :1744 - Application startup complete.
+2026-08-26 09:39:22 | INFO     | logging                  :1744 - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-08-26 09:39:22 | INFO     | logging                  :1744 - HTTP Request: GET https://mikanani.me/RSS/MyBangumi?token=lvtK1%2bAbVI%2fUdaap3iVWMA%3d%3d "HTTP/1.1 200 OK"
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    :  81 - 开始解析 RSS 源: Example
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    :  97 - Example: 获取到 13 个条目
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [绿茶字幕组] 再见拉拉 / 再见菈菈 / Sayonara Lara [07][WebRip][1080p][繁日内嵌]
+2026-08-26 09:39:23 | WARNING  | rss_downloader.parser    : 108 - 匹配失败(Example): [绿茶字幕组] 再见拉拉 / 再见菈菈 / Sayonara Lara [07][WebRip][1080p][简日内嵌]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse]  Re:从零开始的异世界生活 / Re:Zero kara Hajimeru Isekai Seikatsu - 79 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [百冬练习组&LoliHouse]  Re:从零开始的异世界生活 / Re:Zero kara Hajimeru Isekai Seikatsu - 78 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 106 - 匹配成功(Example): [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.parser    : 114 - Example: 匹配到 11 个条目
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [LoliHouse] Grow Up Show ～向日葵马戏团～ / 成长秀 向日葵马戏团 / Grow Up Show - Himawari no Circus-dan - 08 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 07 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CATCHPLAY WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [Nix-Raws] 画完这个再去死 / これ描いて死ね / Kore Kaite Shine S01E07 [CR WEB-DL 1080p AVC AAC][简繁内封]
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [百冬练习组&LoliHouse] BanG Dream! YUME∞MITA / バンドリ！ ゆめ∞みた - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 18 - [百冬练习组&LoliHouse]  Re:从零开始的异世界生活 / Re:Zero kara Hajimeru Isekai Seikatsu - 79 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 112 - 下载任务添加成功 (aria2): 19 - [百冬练习组&LoliHouse]  Re:从零开始的异世界生活 / Re:Zero kara Hajimeru Isekai Seikatsu - 78 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [喵萌奶茶屋&LoliHouse] 花织同学转生后还是想干架 / 花织即使是转生也想打架 / Hanaori-san wa Tensei shitemo Kenka ga Shitai - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 142 - 跳过已下载项目: [绿茶字幕组&LoliHouse] 穹庐下的魔女 / Tenmaku no Jaadugar - 08 [WebRip 1080p HEVC-10bit AAC][简繁日内封字幕]
+2026-08-26 09:39:23 | INFO     | rss_downloader.main      : 180 - 共获取到 13 个条目，匹配到 11 个条目，成功添加 2 个下载任务。
+2026-08-26 09:43:12 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-26 09:43:13 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-26 09:43:13 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-26 09:43:13 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml
+2026-08-26 09:43:23 | INFO     | rss_downloader.services  :  86 - 开始重新配置下载器...
+2026-08-26 09:43:23 | INFO     | logging                  :1744 - HTTP Request: POST http://127.0.0.1:6800/jsonrpc "HTTP/1.1 200 OK"
+2026-08-26 09:43:23 | SUCCESS  | rss_downloader.downloaders:  72 - Aria2 连接成功
+2026-08-26 09:43:23 | INFO     | rss_downloader.config    : 244 - 配置文件已重新加载: C:\Users\Admin\.config\rss-downloader\config.yaml
