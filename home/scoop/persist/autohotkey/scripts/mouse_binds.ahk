@@ -44,11 +44,8 @@ IsFullScreen(winTitle := "A") {
 ; japanese keyboard support
 ; 無変換
 sc07B::Ctrl
-
 ; 変換 sc079::
-
 ; カタカナ|ひらがな|ローマ字 sc070::
-
 ; 半角|全角|漢字 sc029::
 
 ; mpv.exe
@@ -66,10 +63,10 @@ XButton2::Left
 XButton1::g
 XButton2::f
 
-; noita.exe
+; sekiro.exe
 #HotIf WinActive("ahk_exe noita.exe")
-XButton1::g
-XButton2::f
+XButton1::XButton1
+XButton2::XButton2
 
 ; Global default settings
 #HotIf
