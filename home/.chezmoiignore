@@ -3,6 +3,8 @@ README.md
 .DS_Store
 **/.DS_Store
 
+.aria2/aria2.session
+
 scoop/persist/mpv/portable_config/cache/
 scoop/persist/mpv/portable_config/watch_later/
 
