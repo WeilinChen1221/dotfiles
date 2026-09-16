@@ -65,10 +65,15 @@ local function new()
         if not self.enabled() then
             return
         end
-        local parsed = self.client.consume_preview()
-        if parsed and parsed.record then
-            preview_record(parsed.record)
-        end
+        if self.preview_busy then return end
+        self.preview_busy = true
+        self.server_process.ensure_running(function(ok)
+            if not ok then self.preview_busy = false; return end
+            self.client.consume_preview(function(parsed)
+                self.preview_busy = false
+                if parsed and parsed.record then preview_record(parsed.record) end
+            end)
+        end)
     end
 
     function self.start_preview_timer()
@@ -90,36 +95,37 @@ local function new()
         if not self.enabled() then
             return h.notify("Mining history is disabled.", "info", 2)
         end
-        self.server_process.ensure_running()
         self.start_preview_timer()
         local record, error = self.capture.current_record()
         if error then
             return h.notify(error, "warn", 2)
         end
-        self.client.create_record(record, function(_, request_error)
-            if request_error then
-                return h.notify("Mining history failed: " .. request_error, "error", 4)
+        self.server_process.ensure_running(function(ok, startup_error)
+            if not ok then
+                return h.notify('Mining history failed: ' .. tostring(startup_error), 'error', 5)
             end
-            h.notify("Sent subtitle to mining history.", "info", 1)
-            if self.cfg_mgr.query("mining_history_open_browser") == true and self.opened_page == false then
-                self.opened_page = true
-                self.server_process.open_page()
-            end
+            self.client.create_record(record, function(_, request_error)
+                if request_error then
+                    return h.notify("Mining history failed: " .. request_error, "error", 4)
+                end
+                h.notify("Sent subtitle to mining history.", "info", 1)
+                if self.cfg_mgr.query("mining_history_open_browser") == true and self.opened_page == false then
+                    self.opened_page = true
+                    self.server_process.open_page()
+                end
+            end)
         end)
     end
 
-    function self.find_pending_for_sentence(normalized_sentence)
-        if not self.enabled() then
-            return nil
-        end
-        self.server_process.ensure_running()
-        local parsed = self.client.find_pending(normalized_sentence)
-        return parsed and parsed.record or nil
+    function self.claim_note(note_id, normalized_sentence, callback)
+        self.client.claim_note(note_id, normalized_sentence, callback)
     end
 
-    function self.claim_note(note_id, normalized_sentence)
-        self.server_process.ensure_running()
-        return self.client.claim_note(note_id, normalized_sentence)
+    function self.discovery(scope, scanned_through, callback)
+        self.server_process.ensure_running(function(ok, error)
+            if not ok then return callback(nil, error) end
+            self.client.discovery(scope, scanned_through, callback)
+        end)
     end
 
     function self.update_status(record_id, status, note_id, error)
@@ -159,6 +165,7 @@ local function new()
         local finalizing = false
         local final_error = nil
         local renew_timer
+        local lease_lost = false
 
         local function stop_renewal()
             if renew_timer ~= nil then
@@ -173,6 +180,10 @@ local function new()
             end
             finalizing = true
             stop_renewal()
+            if lease_lost then
+                self.resend_busy = false
+                return -- Let the lease expire so unacknowledged deliveries are retried.
+            end
             self.client.finalize_resend(generation_id, lease_token, final_error or '', function(_, request_error)
                 if request_error then
                     h.notify('Mining history resend finalization failed: ' .. tostring(request_error), 'warn', 4)
@@ -184,6 +195,7 @@ local function new()
         renew_timer = mp.add_periodic_timer(resend_renew_interval_seconds, function()
             self.client.renew_resend(generation_id, lease_token, function(_, request_error)
                 if request_error then
+                    lease_lost = true
                     final_error = append_error(final_error, 'lease renewal failed: ' .. tostring(request_error))
                 end
             end)
@@ -191,6 +203,7 @@ local function new()
 
         lease.record.resend_nonce = tostring(generation_id) .. '-' .. lease_token:sub(1, 8)
         local callbacks = {
+            is_active = function() return not lease_lost end,
             on_result = function(note_id, state, error)
                 pending_reports = pending_reports + 1
                 self.client.report_resend(
@@ -201,6 +214,7 @@ local function new()
                         error or '',
                         function(_, request_error)
                             if request_error then
+                                lease_lost = true
                                 final_error = append_error(
                                         final_error,
                                         string.format('failed to record Note %s result: %s', tostring(note_id), tostring(request_error))
@@ -219,6 +233,7 @@ local function new()
                         audio_field,
                         image_field,
                         function(parsed, request_error)
+                            if request_error then lease_lost = true end
                             on_finish(not h.is_empty(parsed) and h.is_empty(request_error), request_error)
                         end
                 )
@@ -245,12 +260,15 @@ local function new()
             return
         end
         self.resend_busy = true
-        self.client.lease_resend(function(parsed, request_error)
-            if request_error or h.is_empty(parsed) or h.is_empty(parsed.lease) then
-                self.resend_busy = false
-                return
-            end
-            self.process_resend_lease(parsed.lease)
+        self.server_process.ensure_running(function(ok)
+            if not ok then self.resend_busy = false; return end
+            self.client.lease_resend(function(parsed, request_error)
+                if request_error or h.is_empty(parsed) or h.is_empty(parsed.lease) then
+                    self.resend_busy = false
+                    return
+                end
+                self.process_resend_lease(parsed.lease)
+            end)
         end)
     end
 

@@ -199,6 +199,14 @@ self.clipboard_prepare = function(text)
     return text
 end
 
+self.current_primary = function()
+    local lines = current_subtitle_lines()
+    if h.is_empty(lines) then
+        return nil
+    end
+    return lines.get_prepared().primary
+end
+
 self.maybe_remove_all_spaces = function(str)
     if self.config.nuke_spaces == true and h.contains_non_latin_letters(str) then
         return h.remove_all_spaces(str)

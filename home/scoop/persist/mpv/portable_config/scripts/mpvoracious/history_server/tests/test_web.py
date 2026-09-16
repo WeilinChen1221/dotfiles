@@ -92,7 +92,9 @@ def claim_payload(note_id: int = 1001) -> dict[str, object]:
 def test_health_records_claim_delivery_and_index(tmp_path: Path) -> None:
     server = WebTestServer(tmp_path / "history.sqlite3")
     try:
-        assert request_json(server, "/health") == {"ok": True}
+        assert request_json(server, "/health") == {
+            "ok": True, "service": "mpvoracious-history", "protocol_version": 2,
+        }
         created = request_json(server, "/api/records", make_record())
         assert created["status"] == "pending_note"
 
@@ -108,6 +110,14 @@ def test_health_records_claim_delivery_and_index(tmp_path: Path) -> None:
 
         with urllib.request.urlopen(server.base_url + "/", timeout=5) as response:
             html = response.read().decode("utf-8")
+        assert '/assets/history.js' in html
+        assert '/assets/history.css' in html
+        with urllib.request.urlopen(server.base_url + "/assets/history.js", timeout=5) as response:
+            assert response.headers.get_content_type() == "text/javascript"
+            html += response.read().decode("utf-8")
+        with urllib.request.urlopen(server.base_url + "/assets/history.css", timeout=5) as response:
+            assert response.headers.get_content_type() == "text/css"
+        assert request_error(server, "/assets/../store.py")[0] == 404
         assert "Waiting for note" in html
         assert "Sending media" in html
         assert "Media ready" in html
@@ -117,6 +127,9 @@ def test_health_records_claim_delivery_and_index(tmp_path: Path) -> None:
         assert "Capture Profile" in html
         assert "Linked Anki Note ID" in html
         assert "Resend Media" in html
+        assert 'attachShadow({mode: "open"})' in html
+        assert "Load more" not in html
+        assert "loadMoreButton" not in html
         assert ">Retry<" not in html
     finally:
         server.close()
@@ -138,7 +151,7 @@ def test_claim_endpoint_reuses_record_and_rejects_duplicate_worker(tmp_path: Pat
         server.close()
 
 
-def test_filtered_records_and_cursor_validation(tmp_path: Path) -> None:
+def test_filtered_records_and_complete_listing(tmp_path: Path) -> None:
     server = WebTestServer(tmp_path / "history.sqlite3")
     try:
         for index in range(5):
@@ -149,20 +162,17 @@ def test_filtered_records_and_cursor_validation(tmp_path: Path) -> None:
             request_json(server, "/api/records", record)
 
         query = urllib.parse.urlencode(
-            [("source_info", "special"), ("subtitle", "needle"), ("profile", "subs2srs"), ("limit", "1")]
+            [("source_info", "special"), ("subtitle", "needle"), ("profile", "subs2srs")]
         )
         page = request_json(server, f"/api/records?{query}")
         assert [record["id"] for record in page["records"]] == ["rec-0"]
         assert page["profiles"] == ["english", "subs2srs"]
 
-        first = request_json(server, "/api/records?limit=2")
-        second = request_json(
-            server, "/api/records?" + urllib.parse.urlencode({"limit": 2, "cursor": first["next_cursor"]})
-        )
-        assert len(first["records"]) == len(second["records"]) == 2
+        listing = request_json(server, "/api/records")
+        assert len(listing["records"]) == 5
+        assert "next_cursor" not in listing
         assert request_error(server, "/api/records?status=wrong")[0] == 400
         assert request_error(server, "/api/records?note_id=abc")[0] == 400
-        assert request_error(server, "/api/records?cursor=bad")[0] == 400
     finally:
         server.close()
 
@@ -176,6 +186,7 @@ def test_resend_endpoints_coalesce_lease_and_finalize(tmp_path: Path) -> None:
         assert "linked" in body["error"]
 
         request_json(server, "/api/claims", claim_payload())
+        request_json(server, "/api/records/rec-1/status", {"status": "media_done", "note_id": 1001})
         first = request_json(server, "/api/records/rec-1/resend", {})
         second = request_json(server, "/api/records/rec-1/resend", {})
         assert first["coalesced"] is False
@@ -267,5 +278,25 @@ def test_delete_clear_and_preview_endpoints(tmp_path: Path) -> None:
         assert request_json(server, "/api/records/delete", method="DELETE") == {"deleted": 1}
         assert request_json(server, "/api/records/clear-all", {}) == {"deleted": 1}
         assert request_json(server, "/api/records")["records"] == []
+    finally:
+        server.close()
+
+
+def test_discovery_endpoint_and_initial_delivery_queue(tmp_path):
+    server = WebTestServer(tmp_path / 'history.sqlite3')
+    try:
+        assert request_json(server, '/api/discovery', {'scope': 'a'})['scanned_through'] is None
+        assert request_json(server, '/api/discovery', {'scope': 'a', 'scanned_through': 1000})['scanned_through'] == 1000
+        assert request_json(server, '/api/discovery', {'scope': 'a'})['scanned_through'] == 1000
+        assert request_error(server, '/api/discovery', {'scope': 'a', 'scanned_through': -1})[0] == 400
+        request_json(server, '/api/records', make_record())
+        request_json(server, '/api/claims', claim_payload())
+        lease = request_json(server, '/api/resends/lease', {})['lease']
+        assert lease['record']['linked_notes'][0]['initial_delivery'] is True
+        request_json(server, '/api/resends/' + str(lease['generation_id']) + '/result', {
+            'lease_token': lease['lease_token'], 'note_id': 1001, 'state': 'done',
+        })
+        result = request_json(server, '/api/resends/' + str(lease['generation_id']) + '/complete', {'lease_token': lease['lease_token']})
+        assert result['record']['status'] == 'media_done'
     finally:
         server.close()

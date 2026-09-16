@@ -1,9 +1,6 @@
 from __future__ import annotations
 
-import base64
-import binascii
 import json
-import math
 import secrets
 import sqlite3
 import time
@@ -15,10 +12,6 @@ VALID_STATUSES = {"pending_note", "matched_note", "media_done", "media_failed"}
 
 
 class InvalidStatusError(ValueError):
-    pass
-
-
-class InvalidCursorError(ValueError):
     pass
 
 
@@ -62,32 +55,8 @@ class HistoryStore:
     def _connect(self) -> sqlite3.Connection:
         conn = sqlite3.connect(self.db_path, timeout=30)
         conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA foreign_keys = ON")
         return conn
-
-    @staticmethod
-    def encode_cursor(created_at: float, sequence: int) -> str:
-        raw = json.dumps([created_at, sequence], separators=(",", ":")).encode("utf-8")
-        return base64.urlsafe_b64encode(raw).decode("ascii").rstrip("=")
-
-    @staticmethod
-    def decode_cursor(cursor: str) -> tuple[float, int]:
-        try:
-            padded = cursor + "=" * (-len(cursor) % 4)
-            payload = json.loads(base64.urlsafe_b64decode(padded.encode("ascii")))
-            if (
-                not isinstance(payload, list)
-                or len(payload) != 2
-                or isinstance(payload[0], bool)
-                or isinstance(payload[1], bool)
-            ):
-                raise ValueError
-            created_at = float(payload[0])
-            sequence = int(payload[1])
-            if not math.isfinite(created_at) or sequence < 1:
-                raise ValueError
-            return created_at, sequence
-        except (binascii.Error, ValueError, TypeError, json.JSONDecodeError, UnicodeError) as exc:
-            raise InvalidCursorError("invalid cursor") from exc
 
     @staticmethod
     def _columns(conn: sqlite3.Connection, table: str) -> set[str]:
@@ -109,6 +78,7 @@ class HistoryStore:
 
     def _init_schema(self) -> None:
         with self._connect() as conn:
+            conn.execute("BEGIN IMMEDIATE")
             conn.execute(
                 """
                 CREATE TABLE IF NOT EXISTS records (
@@ -293,8 +263,108 @@ class HistoryStore:
                     )
                     """
                 )
+            migrating_jobs = not conn.execute(
+                "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'delivery_members'"
+            ).fetchone()
+            conn.execute(
+                """
+                CREATE TABLE IF NOT EXISTS delivery_members (
+                    generation_id INTEGER NOT NULL REFERENCES resend_generations(id) ON DELETE CASCADE,
+                    note_id INTEGER NOT NULL REFERENCES note_claims(note_id) ON DELETE CASCADE,
+                    initial_delivery INTEGER NOT NULL DEFAULT 0,
+                    PRIMARY KEY (generation_id, note_id)
+                )
+                """
+            )
+            conn.execute(
+                """
+                CREATE TABLE IF NOT EXISTS discovery_cursors (
+                    scope TEXT PRIMARY KEY,
+                    scanned_through INTEGER NOT NULL
+                )
+                """
+            )
+            if migrating_jobs:
+                # Existing generations are media-only resends. Keep their semantics.
+                conn.execute(
+                    """
+                    INSERT INTO delivery_members (generation_id, note_id)
+                    SELECT g.id, n.note_id FROM resend_generations g
+                    JOIN note_claims n ON n.record_id = g.record_id
+                    WHERE g.state IN ('pending', 'leased')
+                    """
+                )
             for row in conn.execute("SELECT id FROM records"):
+                self._queue_initial_deliveries(conn, row["id"])
                 self._recalculate_record(conn, row["id"])
+
+    @staticmethod
+    def _queue_initial_deliveries(conn: sqlite3.Connection, record_id: str) -> None:
+        """Attach unassigned claims to pending work, never mutate a leased batch."""
+        generation = conn.execute(
+            "SELECT * FROM resend_generations WHERE record_id = ? AND state IN ('pending', 'leased')",
+            (record_id,),
+        ).fetchone()
+        if generation is not None and generation["state"] == "leased":
+            return
+        notes = conn.execute(
+            """
+            SELECT note_id FROM note_claims n
+            WHERE record_id = ? AND delivery_state IN ('pending', 'in_progress')
+                AND NOT EXISTS (
+                    SELECT 1 FROM delivery_members m JOIN resend_generations g ON g.id = m.generation_id
+                    WHERE m.note_id = n.note_id AND g.state IN ('pending', 'leased')
+                )
+            """,
+            (record_id,),
+        ).fetchall()
+        if not notes:
+            return
+        if generation is None:
+            now = time.time()
+            cursor = conn.execute(
+                "INSERT INTO resend_generations (record_id, state, created_at, updated_at) VALUES (?, 'pending', ?, ?)",
+                (record_id, now, now),
+            )
+            generation_id = cursor.lastrowid
+        else:
+            generation_id = generation["id"]
+        conn.executemany(
+            "INSERT INTO delivery_members (generation_id, note_id, initial_delivery) VALUES (?, ?, 1)",
+            [(generation_id, note["note_id"]) for note in notes],
+        )
+
+    @staticmethod
+    def _settle_pending_generations(conn: sqlite3.Connection, record_id: str) -> None:
+        # Compatibility for status updates and notes deleted before a worker leases them.
+        conn.execute(
+            """
+            UPDATE resend_generations SET state = 'completed', updated_at = ?
+            WHERE record_id = ? AND state = 'pending' AND NOT EXISTS (
+                SELECT 1 FROM delivery_members m JOIN note_claims n ON n.note_id = m.note_id
+                WHERE m.generation_id = resend_generations.id
+                    AND n.delivery_state IN ('pending', 'in_progress')
+            )
+            """,
+            (time.time(), record_id),
+        )
+
+    def discovery_cursor(self, scope: str, scanned_through: int | None = None) -> int | None:
+        if not scope or len(scope) > 4096:
+            raise ValueError("discovery scope is required and must not exceed 4096 characters")
+        if scanned_through is not None and not 0 <= scanned_through <= int(time.time() * 1000):
+            raise ValueError("invalid discovery timestamp")
+        with self._connect() as conn:
+            if scanned_through is not None:
+                conn.execute(
+                    """
+                    INSERT INTO discovery_cursors VALUES (?, ?)
+                    ON CONFLICT(scope) DO UPDATE SET scanned_through = MAX(scanned_through, excluded.scanned_through)
+                    """,
+                    (scope, scanned_through),
+                )
+            row = conn.execute("SELECT scanned_through FROM discovery_cursors WHERE scope = ?", (scope,)).fetchone()
+            return row[0] if row else None
 
     @staticmethod
     def _link_from_row(row: sqlite3.Row) -> dict[str, Any]:
@@ -378,8 +448,8 @@ class HistoryStore:
                 status = "media_done"
                 error = ""
         conn.execute(
-            "UPDATE records SET status = ?, error = ?, updated_at = ? WHERE id = ?",
-            (status, error, time.time(), record_id),
+            "UPDATE records SET status = ?, error = ?, note_id = ?, updated_at = ? WHERE id = ?",
+            (status, error, links[0]["note_id"] if links else None, time.time(), record_id),
         )
 
     @staticmethod
@@ -405,9 +475,10 @@ class HistoryStore:
                 """
                 UPDATE note_claims
                 SET delivery_state = 'pending', delivery_error = '', delivery_updated_at = ?
-                WHERE record_id = ?
+                WHERE note_id IN (SELECT note_id FROM delivery_members WHERE generation_id = ?)
+                    AND delivery_state = 'in_progress'
                 """,
-                (now, generation["record_id"]),
+                (now, generation["id"]),
             )
             HistoryStore._recalculate_record(conn, generation["record_id"])
 
@@ -516,16 +587,12 @@ class HistoryStore:
         subtitle: str = "",
         profiles: Iterable[str] = (),
         note_id: int | None = None,
-        limit: int = 200,
-        cursor: tuple[float, int] | None = None,
     ) -> dict[str, Any]:
         statuses = tuple(dict.fromkeys(statuses))
         profiles = tuple(dict.fromkeys(profiles))
         invalid_statuses = set(statuses) - VALID_STATUSES
         if invalid_statuses:
             raise InvalidStatusError(f"invalid status: {sorted(invalid_statuses)[0]}")
-        if not 1 <= limit <= 500:
-            raise ValueError("limit must be between 1 and 500")
         if note_id is not None and note_id <= 0:
             raise ValueError("note_id must be a positive integer")
 
@@ -553,9 +620,6 @@ class HistoryStore:
                 "WHERE nc.record_id = r.id AND nc.note_id = ?)"
             )
             params.append(note_id)
-        if cursor is not None:
-            conditions.append("(r.created_at < ? OR (r.created_at = ? AND r.sequence < ?))")
-            params.extend((cursor[0], cursor[0], cursor[1]))
         where = " WHERE " + " AND ".join(conditions) if conditions else ""
 
         with self._connect() as conn:
@@ -566,16 +630,10 @@ class HistoryStore:
                 SELECT r.* FROM records r
                 {where}
                 ORDER BY r.created_at DESC, r.sequence DESC
-                LIMIT ?
                 """,
-                (*params, limit + 1),
+                params,
             ).fetchall()
-            has_more = len(rows) > limit
-            rows = rows[:limit]
             records = [self._record_from_row(conn, row) for row in rows]
-            next_cursor = None
-            if has_more and rows:
-                next_cursor = self.encode_cursor(rows[-1]["created_at"], rows[-1]["sequence"])
             available_profiles = [
                 row["profile"]
                 for row in conn.execute(
@@ -584,7 +642,6 @@ class HistoryStore:
             ]
         return {
             "records": records,
-            "next_cursor": next_cursor,
             "profiles": available_profiles,
         }
 
@@ -614,11 +671,15 @@ class HistoryStore:
         profile: str = "",
         audio_field: str = "",
         image_field: str = "",
+        note_created_at: float | None = None,
     ) -> dict[str, Any]:
         if note_id <= 0 or not normalized_sentence or window_minutes < 0:
             raise ValueError("invalid note claim")
-        cutoff = time.time() - (window_minutes * 60)
         now = time.time()
+        match_time = now if note_created_at is None else float(note_created_at)
+        if not 0 <= match_time <= now + 5:
+            raise ValueError("invalid note creation time")
+        cutoff = match_time - (window_minutes * 60)
         with self._connect() as conn:
             conn.execute("BEGIN IMMEDIATE")
             claimed = conn.execute(
@@ -626,20 +687,38 @@ class HistoryStore:
             ).fetchone()
             if claimed is not None:
                 return {"status": "already_claimed", "record": None, "link": None}
-            conditions = ["normalized_sentence = ?", "created_at >= ?"]
-            params: list[Any] = [normalized_sentence, cutoff]
+            record = None
             if profile:
-                conditions.append("profile = ?")
-                params.append(profile)
-            record = conn.execute(
-                f"""
-                SELECT * FROM records
-                WHERE {' AND '.join(conditions)}
-                ORDER BY created_at DESC, sequence DESC
-                LIMIT 1
-                """,
-                params,
-            ).fetchone()
+                # Prefer the Capture Profile used by this worker, but do not make
+                # its local profile name a hard ownership boundary. Separate mpv
+                # processes (or two equivalent profiles) can observe the same
+                # Anki note, while the record itself owns the media settings.
+                record = conn.execute(
+                    """
+                    SELECT * FROM records
+                    WHERE normalized_sentence = ?
+                        AND created_at >= ?
+                        AND created_at <= ?
+                        AND profile = ?
+                    ORDER BY created_at DESC, sequence DESC
+                    LIMIT 1
+                    """,
+                    (normalized_sentence, cutoff, match_time, profile),
+                ).fetchone()
+            if record is None:
+                candidates = conn.execute(
+                    """
+                    SELECT * FROM records
+                    WHERE normalized_sentence = ? AND created_at >= ? AND created_at <= ?
+                    ORDER BY created_at DESC, sequence DESC
+                    LIMIT 2
+                    """,
+                    (normalized_sentence, cutoff, match_time),
+                ).fetchall()
+                if profile and len(candidates) > 1:
+                    return {"status": "ambiguous", "record": None, "link": None}
+                if candidates:
+                    record = candidates[0]
             if record is None:
                 return {"status": "unmatched", "record": None, "link": None}
             conn.execute(
@@ -655,6 +734,7 @@ class HistoryStore:
                 "UPDATE records SET note_id = ?, updated_at = ? WHERE id = ?",
                 (note_id, now, record["id"]),
             )
+            self._queue_initial_deliveries(conn, record["id"])
             self._recalculate_record(conn, record["id"])
             refreshed = conn.execute(
                 "SELECT * FROM records WHERE id = ?", (record["id"],)
@@ -719,6 +799,7 @@ class HistoryStore:
                     "UPDATE records SET note_id = ?, updated_at = ? WHERE id = ?",
                     (note_id, now, record_id),
                 )
+            self._settle_pending_generations(conn, record_id)
             self._recalculate_record(conn, record_id)
             refreshed = conn.execute("SELECT * FROM records WHERE id = ?", (record_id,)).fetchone()
             return self._record_from_row(conn, refreshed)
@@ -737,6 +818,7 @@ class HistoryStore:
             )
             if cursor.rowcount == 0:
                 raise KeyError(note_id)
+            self._settle_pending_generations(conn, record_id)
             self._recalculate_record(conn, record_id)
             refreshed = conn.execute("SELECT * FROM records WHERE id = ?", (record_id,)).fetchone()
             return self._record_from_row(conn, refreshed)
@@ -774,6 +856,13 @@ class HistoryStore:
                 generation = conn.execute(
                     "SELECT * FROM resend_generations WHERE id = ?", (cursor.lastrowid,)
                 ).fetchone()
+                conn.execute(
+                    """
+                    INSERT INTO delivery_members (generation_id, note_id, initial_delivery)
+                    SELECT ?, note_id, 0 FROM note_claims WHERE record_id = ?
+                    """,
+                    (generation["id"], record_id),
+                )
                 conn.execute(
                     """
                     UPDATE note_claims
@@ -817,19 +906,34 @@ class HistoryStore:
                 """
                 UPDATE note_claims
                 SET delivery_state = 'in_progress', delivery_error = '', delivery_updated_at = ?
-                WHERE record_id = ?
+                WHERE note_id IN (SELECT note_id FROM delivery_members WHERE generation_id = ?)
+                    AND delivery_state IN ('pending', 'in_progress')
                 """,
-                (now, generation["record_id"]),
+                (now, generation["id"]),
             )
             self._recalculate_record(conn, generation["record_id"])
             row = conn.execute(
                 "SELECT * FROM records WHERE id = ?", (generation["record_id"],)
             ).fetchone()
+            record = self._record_from_row(conn, row)
+            members = conn.execute(
+                """
+                SELECT n.*, m.initial_delivery FROM note_claims n
+                JOIN delivery_members m ON m.note_id = n.note_id
+                WHERE m.generation_id = ? AND n.delivery_state = 'in_progress'
+                ORDER BY n.created_at, n.note_id
+                """,
+                (generation["id"],),
+            ).fetchall()
+            record["linked_notes"] = [
+                {**self._link_from_row(member), "initial_delivery": bool(member["initial_delivery"])}
+                for member in members
+            ]
             return {
                 "generation_id": generation["id"],
                 "lease_token": token,
                 "lease_expires_at": expires_at,
-                "record": self._record_from_row(conn, row),
+                "record": record,
             }
 
     def renew_resend_lease(
@@ -864,8 +968,11 @@ class HistoryStore:
             conn.execute("BEGIN IMMEDIATE")
             generation = self._require_active_lease(conn, generation_id, lease_token)
             link = conn.execute(
-                "SELECT * FROM note_claims WHERE record_id = ? AND note_id = ?",
-                (generation["record_id"], note_id),
+                """
+                SELECT n.* FROM note_claims n JOIN delivery_members m ON m.note_id = n.note_id
+                WHERE n.record_id = ? AND n.note_id = ? AND m.generation_id = ?
+                """,
+                (generation["record_id"], note_id, generation_id),
             ).fetchone()
             if link is None:
                 raise KeyError(note_id)
@@ -903,8 +1010,11 @@ class HistoryStore:
             conn.execute("BEGIN IMMEDIATE")
             generation = self._require_active_lease(conn, generation_id, lease_token)
             link = conn.execute(
-                "SELECT 1 FROM note_claims WHERE record_id = ? AND note_id = ?",
-                (generation["record_id"], note_id),
+                """
+                SELECT 1 FROM note_claims n JOIN delivery_members m ON m.note_id = n.note_id
+                WHERE n.record_id = ? AND n.note_id = ? AND m.generation_id = ?
+                """,
+                (generation["record_id"], note_id, generation_id),
             ).fetchone()
             if link is None:
                 raise KeyError(note_id)
@@ -943,9 +1053,10 @@ class HistoryStore:
                 """
                 UPDATE note_claims
                 SET delivery_state = 'failed', delivery_error = ?, delivery_updated_at = ?
-                WHERE record_id = ? AND delivery_state IN ('pending', 'in_progress')
+                WHERE note_id IN (SELECT note_id FROM delivery_members WHERE generation_id = ?)
+                    AND delivery_state IN ('pending', 'in_progress')
                 """,
-                (fallback_error, now, generation["record_id"]),
+                (fallback_error, now, generation_id),
             )
             conn.execute(
                 """
@@ -956,6 +1067,7 @@ class HistoryStore:
                 """,
                 (error, now, generation_id),
             )
+            self._queue_initial_deliveries(conn, generation["record_id"])
             self._recalculate_record(conn, generation["record_id"])
             row = conn.execute(
                 "SELECT * FROM records WHERE id = ?", (generation["record_id"],)

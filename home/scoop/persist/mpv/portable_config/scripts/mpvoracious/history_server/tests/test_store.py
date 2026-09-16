@@ -9,7 +9,6 @@ import pytest
 
 from history_server.store import (
     HistoryStore,
-    InvalidCursorError,
     InvalidStatusError,
     NoLinkedNotesError,
     StaleLeaseError,
@@ -102,7 +101,15 @@ def test_insertion_order_breaks_created_at_ties(
     assert [record["id"] for record in records(store)] == ["a-new", "z-old"]
 
 
-def test_claim_restricts_profile_and_stores_stable_targets(tmp_path: Path) -> None:
+def test_list_records_returns_every_record(tmp_path: Path) -> None:
+    store = HistoryStore(tmp_path / "history.sqlite3")
+    for index in range(201):
+        store.add_record(make_record(f"rec-{index}"))
+
+    assert len(records(store)) == 201
+
+
+def test_claim_prefers_profile_and_stores_stable_targets(tmp_path: Path) -> None:
     store = HistoryStore(tmp_path / "history.sqlite3")
     store.add_record(make_record("jp", profile="subs2srs"))
     store.add_record(make_record("en", profile="subs2srs_english"))
@@ -115,6 +122,31 @@ def test_claim_restricts_profile_and_stores_stable_targets(tmp_path: Path) -> No
     assert result["link"]["image_field"] == "Image"
     assert result["record"]["status"] == "matched_note"
     assert result["record"]["linked_note_ids"] == [1001]
+
+
+def test_claim_uses_a_unique_match_from_another_worker_profile(tmp_path: Path) -> None:
+    store = HistoryStore(tmp_path / "history.sqlite3")
+    store.add_record(make_record("captured", profile="capture_profile"))
+
+    first = claim(store, 1001, profile="worker_profile")
+    second = claim(store, 1002, profile="worker_profile")
+
+    assert first["status"] == "claimed"
+    assert first["record"]["id"] == "captured"
+    assert second["status"] == "claimed"
+    assert second["record"]["id"] == "captured"
+
+
+def test_claim_does_not_guess_between_cross_profile_matches(tmp_path: Path) -> None:
+    store = HistoryStore(tmp_path / "history.sqlite3")
+    store.add_record(make_record("first", profile="first_profile"))
+    store.add_record(make_record("second", profile="second_profile"))
+
+    result = claim(store, 1001, profile="worker_profile")
+
+    assert result == {"status": "ambiguous", "record": None, "link": None}
+    assert store.get_record("first")["status"] == "pending_note"
+    assert store.get_record("second")["status"] == "pending_note"
 
 
 def test_different_notes_have_independent_delivery_and_aggregate_status(
@@ -159,7 +191,7 @@ def test_note_is_claimed_once_across_concurrent_workers(tmp_path: Path) -> None:
     ]
 
 
-def test_invalid_status_and_cursor_are_rejected(tmp_path: Path) -> None:
+def test_invalid_status_is_rejected(tmp_path: Path) -> None:
     store = HistoryStore(tmp_path / "history.sqlite3")
     store.add_record(make_record())
 
@@ -167,8 +199,6 @@ def test_invalid_status_and_cursor_are_rejected(tmp_path: Path) -> None:
         store.update_status("rec-1", "bad", 1001, "")
     with pytest.raises(InvalidStatusError):
         store.list_records(statuses=["bad"])
-    with pytest.raises(InvalidCursorError):
-        store.decode_cursor("not-a-cursor")
 
 
 def test_resend_coalesces_and_only_one_worker_leases(tmp_path: Path) -> None:
@@ -275,7 +305,7 @@ def test_confirmed_missing_note_outside_resend_recalculates_aggregate(tmp_path: 
     assert record["status"] == "pending_note"
 
 
-def test_filters_run_before_cursor_pagination_with_and_or_semantics(tmp_path: Path) -> None:
+def test_filters_use_and_or_semantics_and_listing_returns_all_records(tmp_path: Path) -> None:
     store = HistoryStore(tmp_path / "history.sqlite3")
     for index in range(8):
         record = make_record(
@@ -294,19 +324,10 @@ def test_filters_run_before_cursor_pagination_with_and_or_semantics(tmp_path: Pa
         subtitle="一致",
         profiles=["subs2srs", "english"],
         note_id=9001,
-        limit=2,
     )
     assert [record["id"] for record in page["records"]] == ["rec-0"]
 
-    first = store.list_records(limit=3)
-    second = store.list_records(
-        limit=3, cursor=store.decode_cursor(first["next_cursor"])
-    )
-    assert len(first["records"]) == 3
-    assert len(second["records"]) == 3
-    assert set(record["id"] for record in first["records"]).isdisjoint(
-        record["id"] for record in second["records"]
-    )
+    assert len(store.list_records()["records"]) == 8
 
 
 def test_schema_migration_preserves_records_and_claims(tmp_path: Path) -> None:
@@ -371,3 +392,111 @@ def test_preview_request_is_consumed_once(tmp_path: Path) -> None:
 
     assert store.consume_preview_request()["id"] == "rec-1"
     assert store.consume_preview_request() is None
+
+
+def test_initial_delivery_is_durable_and_retry_keeps_settled_siblings(tmp_path, monkeypatch):
+    now = [1000.0]
+    monkeypatch.setattr('history_server.store.time.time', lambda: now[0])
+    path = tmp_path / 'history.sqlite3'
+    store = HistoryStore(path)
+    store.add_record(make_record())
+    claim(store, 1001)
+    claim(store, 1002)
+    store = HistoryStore(path)
+    first = store.lease_resend(5)
+    assert first is not None
+    assert all(link['initial_delivery'] for link in first['record']['linked_notes'])
+    store.report_resend_delivery(first['generation_id'], first['lease_token'], 1001, 'done')
+    now[0] += 6
+    store = HistoryStore(path)
+    second = store.lease_resend(5)
+    assert second['generation_id'] == first['generation_id']
+    assert [link['note_id'] for link in second['record']['linked_notes']] == [1002]
+    with pytest.raises(StaleLeaseError):
+        store.report_resend_delivery(first['generation_id'], first['lease_token'], 1002, 'done')
+    store.report_resend_delivery(second['generation_id'], second['lease_token'], 1002, 'done')
+    assert store.finalize_resend(second['generation_id'], second['lease_token'])['status'] == 'media_done'
+    assert store.lease_resend() is None
+    store.queue_resend('rec-1')
+    resend = store.lease_resend()
+    assert len(resend['record']['linked_notes']) == 2
+    assert not any(link['initial_delivery'] for link in resend['record']['linked_notes'])
+
+
+def test_claim_during_lease_is_not_completed_by_older_batch(tmp_path):
+    store = HistoryStore(tmp_path / 'history.sqlite3')
+    store.add_record(make_record())
+    claim(store, 1001)
+    first = store.lease_resend()
+    claim(store, 1002)
+    with pytest.raises(KeyError):
+        store.report_resend_delivery(first['generation_id'], first['lease_token'], 1002, 'done')
+    with pytest.raises(KeyError):
+        store.adopt_media_targets(first['generation_id'], first['lease_token'], 1002, 'A', 'I')
+    store.report_resend_delivery(first['generation_id'], first['lease_token'], 1001, 'done')
+    result = store.finalize_resend(first['generation_id'], first['lease_token'])
+    assert result['status'] == 'matched_note'
+    next_job = store.lease_resend()
+    assert [link['note_id'] for link in next_job['record']['linked_notes']] == [1002]
+    assert next_job['record']['linked_notes'][0]['initial_delivery'] is True
+
+
+def test_migration_recovers_unqueued_initial_delivery(tmp_path):
+    path = tmp_path / 'history.sqlite3'
+    store = HistoryStore(path)
+    store.add_record(make_record())
+    claim(store, 1001)
+    with sqlite3.connect(path) as conn:
+        conn.execute('DROP TABLE delivery_members')
+        conn.execute('DELETE FROM resend_generations')
+        conn.execute("UPDATE note_claims SET delivery_state = 'in_progress'")
+    migrated = HistoryStore(path)
+    lease = migrated.lease_resend()
+    assert lease['record']['linked_notes'][0]['initial_delivery'] is True
+    assert claim(migrated, 1001)['status'] == 'already_claimed'
+
+
+def test_migration_preserves_media_only_resend(tmp_path):
+    path = tmp_path / 'history.sqlite3'
+    store = HistoryStore(path)
+    store.add_record(make_record())
+    claim(store, 1001)
+    store.update_status('rec-1', 'media_done', 1001, '')
+    store.queue_resend('rec-1')
+    with sqlite3.connect(path) as conn:
+        conn.execute('DROP TABLE delivery_members')
+    migrated = HistoryStore(path)
+    assert migrated.lease_resend()['record']['linked_notes'][0]['initial_delivery'] is False
+
+
+def test_missing_note_does_not_reappear_after_restart(tmp_path):
+    path = tmp_path / 'history.sqlite3'
+    store = HistoryStore(path)
+    store.add_record(make_record())
+    claim(store, 1001)
+    store.remove_missing_note('rec-1', 1001)
+    store = HistoryStore(path)
+    assert store.get_record('rec-1')['linked_notes'] == []
+    assert store.lease_resend() is None
+
+
+def test_discovery_cursor_survives_restart_and_cannot_move_backward(tmp_path):
+    path = tmp_path / 'history.sqlite3'
+    store = HistoryStore(path)
+    assert store.discovery_cursor('anki-a') is None
+    assert store.discovery_cursor('anki-a', 1000) == 1000
+    assert HistoryStore(path).discovery_cursor('anki-a', 900) == 1000
+    assert store.discovery_cursor('anki-b') is None
+    with pytest.raises(ValueError):
+        store.discovery_cursor('anki-a', -1)
+
+
+def test_delayed_discovery_matches_at_note_creation_time(tmp_path, monkeypatch):
+    now = [1000.0]
+    monkeypatch.setattr('history_server.store.time.time', lambda: now[0])
+    store = HistoryStore(tmp_path / 'history.sqlite3')
+    store.add_record(make_record('original'))
+    now[0] = 100000.0
+    store.add_record(make_record('later-repeat'))
+    result = store.claim_note(1100000, 'これはペンです。', 120, 'subs2srs', 'A', 'I', note_created_at=1100)
+    assert result['record']['id'] == 'original'

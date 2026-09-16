@@ -25,171 +25,174 @@ local function classify_claim(claim, error)
     return "retry"
 end
 
+local function sentences_match(first, second, config)
+    if h.is_empty(first) or h.is_empty(second) then
+        return false
+    end
+    return normalizer.normalize(first, config) == normalizer.normalize(second, config)
+end
+
 local function make_anki_new_note_checker()
-    -- Once every X seconds, check if there's a new note.
-    -- If a new note has been added, check if it matches the configured note type (see the config file):
-    -- * deck_name
-    -- * model_name
-    -- * sentence_field
-    -- If it matches, update the note and add its note_id to a local ignore list because we don't want to update it again.
+    local self = { busy = false }
+    local ignored = {}
+    local ignored_scope
+    local started_at
 
-    local ignore_note_ids = {}
-    local accept_notes_made_within_last_minutes = 2
-    local self = {}
-
-    local function is_note_ignored(note_id)
-        return ignore_note_ids[note_id] == true
+    local function history_enabled()
+        return self.history_controller and self.history_controller.enabled()
     end
 
-    local function add_to_ignore_list(note_id)
-        ignore_note_ids[note_id] = true
+    local function scope()
+        -- A cursor belongs to the Anki destination and matching configuration.
+        return require('mp.utils').format_json({
+            self.config.ankiconnect_url, self.config.deck_name, self.config.model_name,
+            self.config.sentence_field, self.config.audio_field, self.config.image_field,
+            self.cfg_mgr.profiles().active, self.config.nuke_spaces,
+        })
     end
 
-    local function is_note_recent(note_id)
-        return note_id >= h.minutes_ago(accept_notes_made_within_last_minutes)
+    local function has_no_media(fields)
+        return h.is_empty(fields[self.config.audio_field]) and h.is_empty(fields[self.config.image_field])
     end
 
-    --- on_completed = fn(note_ids, error)
-    local function find_notes_added_today(on_completed)
-        return self.ankiconnect.find_notes {
-            query = string.format("added:1 \"note:%s\" \"deck:%s\"", self.config.model_name, self.config.deck_name),
+    local function matches_current(fields)
+        if type(self.current_sentence_fn) ~= 'function' then return false end
+        local ok, sentence = pcall(self.current_sentence_fn)
+        return ok and sentences_match(fields[self.config.sentence_field], sentence, self.config)
+    end
+
+    local function finish(error)
+        self.busy = false
+        if error then msg.warn('Note discovery failed: ' .. tostring(error)) end
+    end
+
+    local function scan(cursor, scan_scope, scan_started)
+        local use_history = history_enabled()
+        local scan_error
+        local overlap = (use_history and self.config.mining_history_match_window_minutes or 2) * 60000
+        local since = math.max(0, (cursor or scan_started) - overlap)
+        local days = math.max(1, math.ceil((scan_started - since) / 86400000) + 1)
+        -- Keep only the recent in-memory cache. SQLite claims are authoritative across restarts.
+        for note_id in pairs(ignored) do
+            if note_id < since then ignored[note_id] = nil end
+        end
+        self.ankiconnect.find_notes {
+            query = string.format('added:%d "note:%s" "deck:%s"', days, self.config.model_name, self.config.deck_name),
             suppress_log = true,
-            completion_fn = on_completed,
+            completion_fn = function(note_ids, error)
+                if error then return finish(error) end
+                local candidates = {}
+                for _, note_id in ipairs(note_ids or {}) do
+                    if note_id >= since and not ignored[note_id] then
+                        table.insert(candidates, note_id)
+                    end
+                end
+                local function save_progress()
+                    if scan_error then return finish(scan_error) end
+                    if not use_history then return finish() end
+                    self.history_controller.discovery(scan_scope, scan_started, function(_, save_error)
+                        finish(save_error)
+                    end)
+                end
+                local offset = 1
+                local function next_batch()
+                    if offset > #candidates then return save_progress() end
+                    local batch = {}
+                    for index = offset, math.min(offset + 99, #candidates) do
+                        table.insert(batch, candidates[index])
+                    end
+                    offset = offset + #batch
+                    self.ankiconnect.get_notes_fields_async(batch, function(notes, fields_error)
+                        if fields_error then return finish(fields_error) end
+                        local index = 0
+                        local function next_note()
+                            if use_history and scope() ~= scan_scope then
+                                return finish('matching configuration changed during the scan')
+                            end
+                            index = index + 1
+                            if index > #batch then return next_batch() end
+                            local note_id = batch[index]
+                            local fields = notes[note_id]
+                            if not fields or h.is_empty(fields[self.config.sentence_field]) or not has_no_media(fields) then
+                                ignored[note_id] = true
+                                return next_note()
+                            end
+                            local function legacy_fallback()
+                                -- Historical notes must never use media from the currently playing sentence.
+                                if note_id >= started_at and note_id >= scan_started - 120000 and matches_current(fields) then
+                                    self.update_notes_fn({ note_id }, false)
+                                    ignored[note_id] = true
+                                end
+                                next_note()
+                            end
+                            if not use_history then return legacy_fallback() end
+                            self.history_controller.claim_note(
+                                note_id, normalizer.normalize(fields[self.config.sentence_field], self.config),
+                                function(claim, claim_error)
+                                    local action = classify_claim(claim, claim_error)
+                                    if action == 'retry' then
+                                        scan_error = claim_error or 'history match is ambiguous; scan will be retried'
+                                        return next_note()
+                                    elseif action == 'fallback' then
+                                        return legacy_fallback()
+                                    end
+                                    -- Claiming has atomically queued delivery. The worker handles media.
+                                    ignored[note_id] = true
+                                    next_note()
+                                end
+                            )
+                        end
+                        next_note()
+                    end)
+                end
+                next_batch()
+            end,
         }
     end
 
-    local function ignore_all_cards_added_today()
-        -- initially, ignore all existing cards.
-        local function on_completed(note_ids, error)
-            if not h.is_empty(error) then
-                mp.msg.error(error)
-            end
-            if not h.is_empty(note_ids) then
-                for _, note_id in ipairs(note_ids) do
-                    add_to_ignore_list(note_id)
-                end
-            end
-        end
-        return find_notes_added_today(on_completed)
-    end
-
-    local function has_no_media(note_fields)
-        -- Mpvacious will try to update every new note, including the ones added by Mpvacious itself.
-        -- To avoid updating notes added by mpvacious, check if the note already has media.
-        return h.is_empty(note_fields[self.config.audio_field]) and h.is_empty(note_fields[self.config.image_field])
-    end
-
-    local function try_update_from_history(note_id, note_fields)
-        if h.is_empty(self.history_controller) or not self.history_controller.enabled() then
-            return "fallback"
-        end
-        local sentence = note_fields[self.config.sentence_field]
-        if h.is_empty(sentence) then
-            return "fallback"
-        end
-        local normalized = normalizer.normalize(sentence, self.config)
-        local claim, claim_error = self.history_controller.claim_note(note_id, normalized)
-        local action = classify_claim(claim, claim_error)
-        if action ~= "claimed" then
-            if action == "retry" then
-                mp.msg.warn("Mining history claim failed: " .. tostring(claim_error or "invalid response"))
-            end
-            return action
-        end
-        local record = claim.record
-        self.update_history_note_fn(note_id, record, claim.link, function(success, error, state)
-            if state == 'missing' then
-                self.history_controller.remove_missing_note(record.id, note_id)
-            elseif success then
-                self.history_controller.update_status(record.id, "media_done", note_id, "")
-            else
-                self.history_controller.update_status(record.id, "media_failed", note_id, error or "media backfill failed")
-            end
-        end)
-        return "handled"
-    end
-
-    local function process_new_notes(note_ids, error)
-        if not h.is_empty(error) and not h.is_substr(error, "isn't running") then
-            mp.msg.error("failed to check new notes: " .. error)
-        end
-        if h.is_empty(note_ids) then
-            -- no new notes added today yet.
-            return
-        end
-        local to_update = {}
-        for _, note_id in ipairs(note_ids) do
-            if not is_note_ignored(note_id) then
-                -- Get note info to check if it matches the user's config
-                local note_fields = self.ankiconnect.get_note_fields(note_id)
-                local should_ignore = true
-                -- Check if the note has the configured sentence field.
-                if not h.is_empty(note_fields) and note_fields[self.config.sentence_field] ~= nil and is_note_recent(note_id) and has_no_media(note_fields) then
-                    local action = try_update_from_history(note_id, note_fields)
-                    if action == "fallback" then
-                        -- Note matches our criteria, update it (just like pressing Ctrl+M does).
-                        table.insert(to_update, note_id)
-                    elseif action == "retry" then
-                        should_ignore = false
-                    end
-                end
-                -- Claim errors stay eligible for the next polling cycle.
-                if should_ignore then
-                    add_to_ignore_list(note_id)
-                end
-            end
-        end
-        if not h.is_empty(to_update) then
-            self.update_notes_fn(to_update, false)
-        end
-    end
-
     local function check_for_new_notes()
-        return find_notes_added_today(process_new_notes)
+        if self.busy then return end
+        self.busy = true
+        local scan_started = os.time() * 1000
+        if not history_enabled() then return scan(nil, nil, scan_started) end
+        local scan_scope = scope()
+        if ignored_scope ~= scan_scope then
+            ignored = {}
+            ignored_scope = scan_scope
+        end
+        self.history_controller.discovery(scan_scope, nil, function(parsed, error)
+            if error or not parsed then return finish(error or 'history server unavailable') end
+            local cursor = type(parsed.scanned_through) == 'number' and parsed.scanned_through or nil
+            scan(cursor, scan_scope, scan_started)
+        end)
     end
 
     local function start_timer()
-        if h.is_empty(self.config) then
-            msg.error("attempt to start new note checker before init.")
-            return
-        end
-        if not self.config.enable_new_note_timer then
-            msg.info("new note checker disabled.")
-            return
-        end
-        ignore_all_cards_added_today()
-        -- docs: https://github.com/mpv-player/mpv/blob/master/DOCS/man/lua.rst#mp-functions
-        if self.timer == nil then
-            self.timer = mp.add_periodic_timer(self.config.new_note_timer_interval_seconds, check_for_new_notes)
-        end
-        msg.info("new note checker started.")
+        if not self.config or not self.config.enable_new_note_timer or self.timer then return end
+        started_at = os.time() * 1000
+        self.timer = mp.add_periodic_timer(self.config.new_note_timer_interval_seconds, check_for_new_notes)
+        check_for_new_notes()
     end
 
     local function stop_timer()
-        if self.timer ~= nil then
-            self.timer:kill()
-            self.timer = nil
-        end
-        msg.info("new note checker stopped.")
+        if self.timer then self.timer:kill(); self.timer = nil end
     end
 
-    local function init(ankiconnect, update_notes_fn, update_history_note_fn, history_controller, cfg_mgr)
+    local function init(ankiconnect, update_notes_fn, history_controller, cfg_mgr, current_sentence_fn)
         cfg_mgr.fail_if_not_ready()
         self.ankiconnect = ankiconnect
         self.update_notes_fn = update_notes_fn
-        self.update_history_note_fn = update_history_note_fn
         self.history_controller = history_controller
+        self.cfg_mgr = cfg_mgr
         self.config = cfg_mgr.config()
+        self.current_sentence_fn = current_sentence_fn
     end
 
-    return {
-        start_timer = start_timer,
-        stop_timer = stop_timer,
-        init = init,
-    }
+    return { start_timer = start_timer, stop_timer = stop_timer, init = init }
 end
 
 return {
     new = make_anki_new_note_checker,
     classify_claim = classify_claim,
+    sentences_match = sentences_match,
 }

@@ -70,7 +70,11 @@ end
 
 --- Parameters: url, request_json, completion_fn, suppress_log
 self.json_curl_request = function(o)
-    local args = { '-s', o.url, '-X', 'POST', '-d', o.request_json }
+    local args = { '-sS', '--connect-timeout', '2', '--max-time', '10', o.url,
+                   '-H', 'Content-Type: application/json; charset=UTF-8', '-X', 'POST', '--data-binary', o.request_json }
+    if o.http_status then
+        args = h.join_lists(args, { '--write-out', '\n%{http_code}' })
+    end
     return self.curl_request { args = args, completion_fn = o.completion_fn, suppress_log = o.suppress_log }
 end
 

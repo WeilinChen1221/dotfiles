@@ -19,7 +19,7 @@ local self = {
 local tmp_files = {}
 
 mp.register_event('shutdown', function()
-    for _, file in ipairs(tmp_files) do
+    for file in pairs(tmp_files) do
         os.remove(file)
     end
 end)
@@ -64,11 +64,16 @@ end
 self.json_curl_request = function(o)
     local curl_tmpfile_path = self.gen_unique_tmp_file_path()
     local handle = io.open(curl_tmpfile_path, "w")
+    if not handle then
+        local result = { status = -1, stderr = 'Could not create curl request file' }
+        if o.completion_fn then return o.completion_fn(false, result, result.stderr) end
+        return result
+    end
     handle:write(o.request_json)
     handle:close()
-    table.insert(tmp_files, curl_tmpfile_path)
+    tmp_files[curl_tmpfile_path] = true
     local args = {
-        '-s',
+        '-sS', '--connect-timeout', '2', '--max-time', '10',
         o.url,
         '-H',
         'Content-Type: application/json; charset=UTF-8',
@@ -77,11 +82,23 @@ self.json_curl_request = function(o)
         '--data-binary',
         table.concat { '@', curl_tmpfile_path }
     }
-    return self.curl_request {
+    if o.http_status then
+        args = h.join_lists(args, { '--write-out', '\n%{http_code}' })
+    end
+    local function cleanup()
+        os.remove(curl_tmpfile_path)
+        tmp_files[curl_tmpfile_path] = nil
+    end
+    local result = self.curl_request {
         args = args,
-        completion_fn = o.completion_fn,
+        completion_fn = o.completion_fn and function(...)
+            cleanup()
+            o.completion_fn(...)
+        end,
         suppress_log = o.suppress_log
     }
+    if not o.completion_fn then cleanup() end
+    return result
 end
 
 return self

@@ -626,9 +626,9 @@ local main = (function()
         new_note_checker.init(
                 ankiconnect,
                 menu:with_update { note_exporter.update_notes },
-                note_exporter.update_note_from_history_record,
                 history_controller,
-                cfg_mgr
+                cfg_mgr,
+                subs_observer.current_primary
         )
         pcall_tests()
 

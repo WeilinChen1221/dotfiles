@@ -14,6 +14,9 @@ dev = [
     "pytest>=8.0",
 ]
 
+[tool.hatch.build]
+artifacts = ["history_server/assets/**"]
+
 [tool.hatch.build.targets.wheel]
 packages = ["history_server"]
 

@@ -99,11 +99,17 @@ local function make_ankiconnect()
         end
     end
 
-    self.get_media_dir_path_result = function()
+    self.get_media_dir_path_result = function(callback)
         local request = {
             action = "getMediaDirPath",
             version = 6,
         }
+        if callback then
+            return self.execute {
+                request = request, suppress_log = true,
+                completion_fn = self.make_result_parser_async(callback),
+            }
+        end
         return self.parse_result(self.execute { request = request, suppress_log = true })
     end
 
@@ -233,6 +239,25 @@ local function make_ankiconnect()
             return fields
         end
         return nil
+    end
+
+    self.get_notes_fields_async = function(note_ids, callback)
+        return self.execute {
+            request = { action = 'notesInfo', version = 6, params = { notes = note_ids } },
+            suppress_log = true,
+            completion_fn = self.make_result_parser_async(function(notes, error)
+                if error then return callback(nil, error) end
+                local result = {}
+                for _, note in ipairs(notes or {}) do
+                    if note.noteId and note.fields then
+                        local fields = {}
+                        for name, field in pairs(note.fields) do fields[name] = field.value end
+                        result[note.noteId] = fields
+                    end
+                end
+                callback(result, nil)
+            end),
+        }
     end
 
     self.replace_media = function(note_id, fields, on_finish_fn)

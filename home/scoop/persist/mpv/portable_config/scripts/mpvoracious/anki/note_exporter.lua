@@ -6,10 +6,12 @@ License: GNU GPL, version 3 or later; http://www.gnu.org/licenses/gpl.html
 local mp = require('mp')
 local h = require('helpers')
 local dec_counter = require('utils.dec_counter')
-local ankiconnect_factory = require('anki.ankiconnect')
+local default_ankiconnect_factory = require('anki.ankiconnect')
+local source_info = require('history.source_info')
 
-local function make_exporter()
+local function make_exporter(dependencies)
     local self = {}
+    local ankiconnect_factory = dependencies and dependencies.ankiconnect_factory or default_ankiconnect_factory
 
     local substitute_fmt = (function()
         local function substitute_filename(tag, filename)
@@ -353,24 +355,28 @@ local function make_exporter()
         }
     end
 
-    local function history_runtime(record)
+    local function history_runtime(record, callback)
         local config, config_error = self.cfg_mgr.resolve_profile(record.profile)
         if h.is_empty(config) then
+            if callback then return callback(nil, config_error or 'Capture Profile is unavailable.') end
             return nil, config_error or 'Capture Profile is unavailable.'
         end
         local scoped_ankiconnect = ankiconnect_factory.new()
         scoped_ankiconnect.init_with_config(config)
-        local media_dir, media_dir_error = scoped_ankiconnect.get_media_dir_path_result()
-        if h.is_empty(media_dir) then
-            return nil, media_dir_error or "couldn't find Anki media directory"
+        local function with_media_dir(media_dir, media_dir_error)
+            if h.is_empty(media_dir) then
+                return nil, media_dir_error or "couldn't find Anki media directory"
+            end
+            local scoped_encoder = self.encoder.new(config)
+            scoped_encoder.set_output_dir(media_dir)
+            return { config = config, ankiconnect = scoped_ankiconnect, encoder = scoped_encoder }, nil
         end
-        local scoped_encoder = self.encoder.new(config)
-        scoped_encoder.set_output_dir(media_dir)
-        return {
-            config = config,
-            ankiconnect = scoped_ankiconnect,
-            encoder = scoped_encoder,
-        }, nil
+        if callback then
+            return scoped_ankiconnect.get_media_dir_path_result(function(media_dir, error)
+                callback(with_media_dir(media_dir, error))
+            end)
+        end
+        return with_media_dir(scoped_ankiconnect.get_media_dir_path_result())
     end
 
     local function validate_targets(note_fields, audio_field, image_field)
@@ -397,6 +403,23 @@ local function make_exporter()
             fields[image_field] = h.is_empty(image_filename)
                     and ''
                     or string.format(config.image_template, image_filename)
+        end
+        return fields
+    end
+
+    local function history_note_fields(config, stored_fields, record, audio_field, image_field, audio_filename, image_filename)
+        local fields = media_fields(config, audio_field, image_field, audio_filename, image_filename)
+        if config.miscinfo_enable == true and not h.is_empty(config.miscinfo_field) then
+            local captured_source_info = record.source_info
+            if h.is_empty(captured_source_info) then
+                captured_source_info = source_info.format(config, record)
+            end
+            local stored_source_info = h.table_get(stored_fields, config.miscinfo_field, '')
+            if config.append_media then
+                fields[config.miscinfo_field] = join_field_content(captured_source_info, stored_source_info)
+            else
+                fields[config.miscinfo_field] = join_field_content(stored_source_info, captured_source_info)
+            end
         end
         return fields
     end
@@ -458,8 +481,10 @@ local function make_exporter()
             end
             runtime.ankiconnect.replace_media(
                     note_id,
-                    media_fields(
+                    history_note_fields(
                             runtime.config,
+                            note_fields,
+                            record,
                             link.audio_field,
                             link.image_field,
                             audio_filename,
@@ -472,11 +497,7 @@ local function make_exporter()
         end)
     end
 
-    local function resend_history_media(record, links, callbacks)
-        local runtime, runtime_error = history_runtime(record)
-        if not runtime then
-            return callbacks.on_finish(runtime_error)
-        end
+    local function deliver_history_media(runtime, record, links, notes, callbacks)
         if h.is_empty(record.video_path) then
             return callbacks.on_finish('history record has no video path')
         end
@@ -484,11 +505,9 @@ local function make_exporter()
         local prepared = {}
         local adoptions = {}
         for _, link in ipairs(links or {}) do
-            local note_fields, note_state, note_error = runtime.ankiconnect.get_note_fields_result(link.note_id)
-            if note_state == 'missing' then
+            local note_fields = notes[link.note_id]
+            if not note_fields then
                 callbacks.on_result(link.note_id, 'missing', '')
-            elseif note_state ~= 'found' then
-                return callbacks.on_finish(note_error or 'AnkiConnect unavailable')
             else
                 local audio_field = h.is_empty(link.audio_field) and runtime.config.audio_field or link.audio_field
                 local image_field = h.is_empty(link.image_field) and runtime.config.image_field or link.image_field
@@ -500,6 +519,8 @@ local function make_exporter()
                     note_id = link.note_id,
                     audio_field = audio_field,
                     image_field = image_field,
+                    initial_delivery = link.initial_delivery == true,
+                    stored_fields = note_fields,
                 }
                 table.insert(prepared, item)
                 if h.is_empty(link.audio_field) or h.is_empty(link.image_field) then
@@ -516,17 +537,25 @@ local function make_exporter()
                 if not success then
                     return callbacks.on_finish(error)
                 end
+                if callbacks.is_active and not callbacks.is_active() then
+                    return callbacks.on_finish('delivery lease was lost')
+                end
                 local remaining = #prepared
                 for _, item in ipairs(prepared) do
+                    local fields
+                    if item.initial_delivery then
+                        fields = history_note_fields(
+                                runtime.config, item.stored_fields, record,
+                                item.audio_field, item.image_field, audio_filename, image_filename
+                        )
+                    else
+                        fields = media_fields(
+                                runtime.config, item.audio_field, item.image_field, audio_filename, image_filename
+                        )
+                    end
                     runtime.ankiconnect.replace_media(
                             item.note_id,
-                            media_fields(
-                                    runtime.config,
-                                    item.audio_field,
-                                    item.image_field,
-                                    audio_filename,
-                                    image_filename
-                            ),
+                            fields,
                             function(update_success, update_error)
                                 callbacks.on_result(
                                         item.note_id,
@@ -568,6 +597,23 @@ local function make_exporter()
                     end
             )
         end
+    end
+
+    local function resend_history_media(record, links, callbacks)
+        if #links == 0 then return callbacks.on_finish(nil) end
+        history_runtime(record, function(runtime, runtime_error)
+            if not runtime then return callbacks.on_finish(runtime_error) end
+            local note_ids = {}
+            for _, link in ipairs(links) do table.insert(note_ids, link.note_id) end
+            runtime.ankiconnect.get_notes_fields_async(note_ids, function(notes, error)
+                if error then return callbacks.on_finish(error) end
+                if callbacks.is_active and not callbacks.is_active() then
+                    return callbacks.on_finish('delivery lease was lost')
+                end
+                local ok, delivery_error = pcall(deliver_history_media, runtime, record, links, notes, callbacks)
+                if not ok then callbacks.on_finish(tostring(delivery_error)) end
+            end)
+        end)
     end
 
     local function export_to_anki(gui)
