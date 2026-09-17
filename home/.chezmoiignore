@@ -3,6 +3,28 @@ README.md
 .DS_Store
 **/.DS_Store
 
+# Local state, downloaded plugins, and credentials.
+.zshrc
+.zsh_history
+.zsh_sessions/**
+.config/zsh/.zsh_history
+.config/zsh/.zsh_sessions/**
+.config/zsh/.zcompdump*
+.config/zsh/plugins/**
+.config/gh/hosts.yml
+.config/chezmoi/chezmoistate.boltdb
+.config/homebrew/**
+.homebrew/**
+.gnupg/private-keys-v1.d/**
+.gnupg/openpgp-revocs.d/**
+.gnupg/public-keys.d/**
+.gnupg/trustdb.gpg
+.gnupg/random_seed
+.password-store/**
+.ssh/id_*
+**/__pycache__/**
+**/.venv/**
+
 .aria2/aria2.session
 
 scoop/persist/mpv/portable_config/cache/
@@ -14,7 +36,27 @@ scoop/persist/mpv/portable_config/watch_later/
 {{- end }}
 
 {{- if ne .chezmoi.os "windows" }}
+.aria2/**
+scoop/**
 AppData/**
 Documents/PowerShell/**
 Documents/WindowsPowerShell/**
+{{- end }}
+
+{{- if ne .chezmoi.os "darwin" }}
+.Brewfile
+.zshenv
+.config/zsh/**
+.config/cabal/**
+.config/lf/**
+.config/mpv/**
+.config/rift/**
+.config/terminal/**
+.gnupg/common.conf
+Library/**
+{{- end }}
+
+# The arbtt agent needs the locally built executable before it can run.
+{{- if not (stat (joinPath .chezmoi.homeDir "Documents/Code/arbtt/bin/arbtt-capture")) }}
+Library/LaunchAgents/de.nomeata.arbtt.plist
 {{- end }}
