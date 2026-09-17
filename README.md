@@ -101,9 +101,45 @@ otherwise omits from `brew bundle dump`.
 
 ## Windows
 
-The existing Scoop manifest, PowerShell profiles, AutoHotkey, mpv, and aria2
-configuration remain available for Windows. macOS ignores the Windows paths.
-The newly imported Mac-specific configs are excluded on other operating systems.
+With Scoop and chezmoi installed, initialize this repo and restore packages before
+applying settings:
+
+```powershell
+chezmoi init https://github.com/WeilinChen1221/dotfiles.git
+Set-Location (Split-Path (chezmoi source-path) -Parent)
+& .\scripts\restore-scoop.ps1
+chezmoi diff
+chezmoi apply
+```
+
+`restore-scoop.ps1` runs Scoop import from the repository root so the saved custom
+FFmpeg manifest resolves correctly. Scoop installs missing packages and restores
+the held-package flag. The manifest records versions; ordinary bucket packages
+are not a version lockfile.
+
+Refresh the package inventory after changing your Scoop installation:
+
+```powershell
+Set-Location (Split-Path (chezmoi source-path) -Parent)
+& .\scripts\refresh-scoopfile.ps1
+chezmoi git -- diff -- packages
+```
+
+The export uses UTF-8, omits volatile update timestamps, and saves manifests for
+packages installed from generated manifests. It excludes Scoop's local config,
+which can contain proxy credentials.
+
+Alongside PowerShell, AutoHotkey, mpv, and aria2, chezmoi manages Windows Terminal,
+JPEGView, HWiNFO, CrystalDiskInfo, Locale Emulator, Notepad3 preferences and themes,
+Mp3tag actions and field layouts, and beets settings. See
+[the Windows inventory](docs/windows-inventory.md) for paths and exclusions.
+
+Notepad3's template preserves existing local recent-file/search history at apply
+time. Use `chezmoi edit` for its preferences; do not re-add its live INI, which
+would copy history into the repository. Its Favorites path uses Scoop's persistent
+directory rather than a versioned installation directory.
+
+macOS ignores the Windows paths. Mac-specific configs are excluded on Windows.
 
 ## Excluded data
 

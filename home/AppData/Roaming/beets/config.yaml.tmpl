@@ -1,0 +1,60 @@
+directory: {{ joinPath .chezmoi.homeDir "Music" | quote }}
+
+import:
+  copy: no
+  move: no
+  write: no
+  resume: yes
+  incremental: yes
+  incremental_skip_later: no 
+  duplicate_action: ask
+  log: {{ joinPath .chezmoi.homeDir "AppData" "Roaming" "beets" "import.log" | quote }}
+
+paths:
+  default: $albumartist/$album%aunique{}/$disc-$track $title
+  comp: Various Artists/$album%aunique{}/$disc-$track $title
+  singleton: Non-Album/$artist/$title
+
+plugins:
+  - musicbrainz
+  - fetchart
+  - export
+  - lyrics
+  - mbsync
+  - edit
+  - zero
+
+edit:
+  itemfields: track tracktotal title artist album
+
+lyrics:
+  auto: yes
+  sources:
+    - lrclib
+    - genius
+    - lrcmux
+    - google
+  synced: yes
+  force: no
+  keep_synced: yes
+
+zero:
+  auto: yes
+  update_database: yes
+  fields: >
+    mb_albumid
+    mb_releasegroupid
+    mb_albumartistid
+    mb_albumartistids
+    albumartist_sort
+    albumtype
+    albumtypes
+    albumstatus
+    albumdisambig
+    label
+    catalognum
+    barcode
+    asin
+    country
+    language
+    script

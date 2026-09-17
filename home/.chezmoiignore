@@ -29,6 +29,15 @@ README.md
 
 scoop/persist/mpv/portable_config/cache/
 scoop/persist/mpv/portable_config/watch_later/
+scoop/persist/windows-terminal/settings/state.json
+scoop/persist/crystaldiskinfo/Smart/**
+scoop/persist/rclone/**
+scoop/persist/OpenList/**
+scoop/persist/musicbee/**
+scoop/persist/Mp3tag/mp3tag.cfg
+scoop/persist/yt-dlp/yt-dlp-plugins/**
+scoop/persist/yt-dlp/ytdlp_plugins/**
+.config/scoop/config.json
 
 {{- if eq .chezmoi.os "windows" }}
 .zshrc
@@ -52,7 +61,8 @@ Documents/WindowsPowerShell/**
 .config/mpv/**
 .config/rift/**
 .config/terminal/**
-.gnupg/common.conf
+.config/gh/**
+.gnupg/**
 Library/**
 {{- end }}
 
