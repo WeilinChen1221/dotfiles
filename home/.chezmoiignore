@@ -25,6 +25,34 @@ README.md
 **/__pycache__/**
 **/.venv/**
 
+# The vocalcredit plugin directory also contains local vault scans, API
+# responses, repair plans, journals, backups, and test fixtures. Keep only
+# the plugin source managed by chezmoi.
+AppData/Roaming/beets/vocalcredit/README.md
+AppData/Roaming/beets/vocalcredit/backup-*/**
+AppData/Roaming/beets/vocalcredit/backup-location.txt
+AppData/Roaming/beets/vocalcredit/diagnostics/**
+AppData/Roaming/beets/vocalcredit/inventory.json
+AppData/Roaming/beets/vocalcredit/recordings/**
+AppData/Roaming/beets/vocalcredit/releases/**
+AppData/Roaming/beets/vocalcredit/repair-apply-plan.json
+AppData/Roaming/beets/vocalcredit/repair-journal.jsonl
+AppData/Roaming/beets/vocalcredit/repair-plan.json
+AppData/Roaming/beets/vocalcredit/repair.py
+AppData/Roaming/beets/vocalcredit/resolve.py
+AppData/Roaming/beets/vocalcredit/resolved.json
+AppData/Roaming/beets/vocalcredit/repro.py
+AppData/Roaming/beets/vocalcredit/scan-errors.json
+AppData/Roaming/beets/vocalcredit/scan.py
+AppData/Roaming/beets/vocalcredit/scan-v2.py
+AppData/Roaming/beets/vocalcredit/summary.json
+AppData/Roaming/beets/vocalcredit/test_integration.py
+AppData/Roaming/beets/vocalcredit/test_vocalcredit.py
+AppData/Roaming/beets/vocalcredit/unidentified-review.json
+AppData/Roaming/beets/vocalcredit/unidentified.json
+AppData/Roaming/beets/vocalcredit/verify.py
+AppData/Roaming/beets/vocalcredit/zero-recording.json
+
 .aria2/aria2.session
 
 scoop/persist/mpv/portable_config/cache/

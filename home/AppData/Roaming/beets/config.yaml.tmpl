@@ -16,6 +16,7 @@ paths:
   singleton: Non-Album/$artist/$title
 
 plugins:
+  - vocalcredit
   - musicbrainz
   - fetchart
   - export
@@ -58,3 +59,9 @@ zero:
     country
     language
     script
+
+# Preserve MusicBrainz vocal relationships as separate credits.
+pluginpath:
+  - {{ joinPath .chezmoi.homeDir "AppData" "Roaming" "beets" "vocalcredit" | quote }}
+vocalcredit:
+  auto_write: yes

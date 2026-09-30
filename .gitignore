@@ -1,0 +1,3 @@
+# Keep the deployable plugin source, but never commit its local vault data.
+home/AppData/Roaming/beets/vocalcredit/*
+!home/AppData/Roaming/beets/vocalcredit/vocalcredit.py
