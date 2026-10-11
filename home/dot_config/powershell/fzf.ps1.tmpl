@@ -1,0 +1,30 @@
+$env:FZF_DEFAULT_COMMAND = '{{ .shell.fzfCommand | replace "'" "''" }}'
+$env:FZF_CTRL_T_COMMAND = $env:FZF_DEFAULT_COMMAND
+$env:FZF_ALT_C_COMMAND = 'fd --type d --hidden --strip-cwd-prefix'
+$env:FZF_DEFAULT_OPTS = '{{ .shell.fzfOptions | replace "'" "''" }}'
+$env:_FZF_PREVIEW_CMD = '{{ .shell.fzfPreview | replace "'" "''" }}'
+# fzf uses cmd.exe for previews on Windows; use double-quoted option values.
+$env:FZF_CTRL_T_OPTS = '--preview "' + $env:_FZF_PREVIEW_CMD + '"'
+
+function ConvertTo-DotfilesPathToken {
+    param([Parameter(Mandatory)][string]$Path)
+    # Always quote, including names containing $, brackets, backticks or quotes.
+    "'" + $Path.Replace("'", "''") + "'"
+}
+
+function Invoke-DotfilesFilePicker {
+    if (-not (Get-Command fzf.exe -CommandType Application -ErrorAction SilentlyContinue)) { return }
+    if (-not (Get-Command fd.exe -CommandType Application -ErrorAction SilentlyContinue)) { return }
+    $selection = & fd.exe --type f --strip-cwd-prefix | & fzf.exe --preview $env:_FZF_PREVIEW_CMD
+    if ($LASTEXITCODE -eq 0 -and $selection) {
+        [Microsoft.PowerShell.PSConsoleReadLine]::Insert((ConvertTo-DotfilesPathToken $selection))
+    }
+    [Microsoft.PowerShell.PSConsoleReadLine]::InvokePrompt()
+}
+
+if ((Get-Command fzf.exe -CommandType Application -ErrorAction SilentlyContinue) -and
+    (Get-Module -ListAvailable PSFzf)) {
+    Import-Module PSFzf
+    # In Vi mode the final bindings are installed below in both keymaps.
+    Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+}

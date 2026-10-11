@@ -41,6 +41,12 @@
                      "Info":  ""
                  },
                  {
+                     "Name":  "bat",
+                     "Version":  "0.26.1",
+                     "Source":  "main",
+                     "Info":  ""
+                 },
+                 {
                      "Name":  "chezmoi",
                      "Version":  "2.71.1",
                      "Source":  "main",
@@ -71,8 +77,20 @@
                      "Info":  ""
                  },
                  {
+                     "Name":  "eza",
+                     "Version":  "0.23.5",
+                     "Source":  "main",
+                     "Info":  ""
+                 },
+                 {
                      "Name":  "fastfetch",
                      "Version":  "2.66.0",
+                     "Source":  "main",
+                     "Info":  ""
+                 },
+                 {
+                     "Name":  "fd",
+                     "Version":  "10.5.0",
                      "Source":  "main",
                      "Info":  ""
                  },
@@ -81,6 +99,18 @@
                      "Version":  "7.1.1",
                      "Source":  "./packages/manifests/ffmpeg-shared.json",
                      "Info":  "Held package"
+                 },
+                 {
+                     "Name":  "fnm",
+                     "Version":  "1.39.0",
+                     "Source":  "main",
+                     "Info":  ""
+                 },
+                 {
+                     "Name":  "fzf",
+                     "Version":  "0.74.5",
+                     "Source":  "main",
+                     "Info":  ""
                  },
                  {
                      "Name":  "gh",
@@ -115,6 +145,18 @@
                  {
                      "Name":  "kopia",
                      "Version":  "0.23.1",
+                     "Source":  "main",
+                     "Info":  ""
+                 },
+                 {
+                     "Name":  "less",
+                     "Version":  "710",
+                     "Source":  "main",
+                     "Info":  ""
+                 },
+                 {
+                     "Name":  "lf",
+                     "Version":  "r42",
                      "Source":  "main",
                      "Info":  ""
                  },
@@ -161,8 +203,20 @@
                      "Info":  ""
                  },
                  {
+                     "Name":  "pwsh74",
+                     "Version":  "7.4.20",
+                     "Source":  "./packages/manifests/pwsh74.json",
+                     "Info":  "Held package"
+                 },
+                 {
                      "Name":  "rclone",
                      "Version":  "1.75.0",
+                     "Source":  "main",
+                     "Info":  ""
+                 },
+                 {
+                     "Name":  "ripgrep",
+                     "Version":  "15.2.0",
                      "Source":  "main",
                      "Info":  ""
                  },
@@ -170,6 +224,12 @@
                      "Name":  "sacd-extract",
                      "Version":  "0.3.9.3",
                      "Source":  "confetti",
+                     "Info":  ""
+                 },
+                 {
+                     "Name":  "starship",
+                     "Version":  "1.26.0",
+                     "Source":  "main",
                      "Info":  ""
                  },
                  {
@@ -193,6 +253,12 @@
                  {
                      "Name":  "yt-dlp",
                      "Version":  "2026.07.04",
+                     "Source":  "main",
+                     "Info":  ""
+                 },
+                 {
+                     "Name":  "zoxide",
+                     "Version":  "0.10.0",
                      "Source":  "main",
                      "Info":  ""
                  }

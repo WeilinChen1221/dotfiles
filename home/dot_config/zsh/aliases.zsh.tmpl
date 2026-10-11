@@ -1,29 +1,14 @@
-# Better ls
-alias ls='eza --icons'
-
-# Detailed listing
-alias ll='eza -lh --icons --git'
-
-# Detailed listing including hidden files
-alias la='eza -lah --icons --git'
-
-# Tree view
-alias tree='eza --tree --icons'
-
+# Shared shortcuts, rendered for zsh.
+{{ range .shell.aliases -}}
+alias {{ .name }}={{ printf "%s %s" .command (join " " .arguments) | trim | shellQuote }}
+{{ end }}
 # Reuse ls completions for eza (avoids defining a separate completion function)
 compdef eza=ls
-
-# Better cat
-alias cat='bat'
-
-# Codex
-alias cx='codex --yolo'
 
 # =========================================================
 # Core utilities
 # =========================================================
 
-alias grep='rg --color=auto'
 alias diff='diff --color=auto'
 alias df='df -h'
 
@@ -55,7 +40,6 @@ alias vim='nvim'
 
 alias glog='PAGER="less -F -X" git log'                              # -F quit if one screen, -X no clear on exit
 alias gadog='PAGER="less -F -X" git log --all --decorate --oneline --graph'
-alias dotfiles='chezmoi git --'
 
 # =========================================================
 # Video

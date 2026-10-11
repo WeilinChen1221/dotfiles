@@ -16,7 +16,8 @@ No applications were installed, upgraded, removed, or restarted during this audi
 
 | Application | Destination under the Windows home directory |
 | --- | --- |
-| PowerShell | `Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1` |
+| PowerShell | `Documents/PowerShell/profile.ps1`, legacy loader in `Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1`, `.config/powershell/` |
+| Starship and lf icons | `.config/starship.toml`, `.config/lf/icons` |
 | Git | `.gitconfig`, `.gitignore_global` |
 | aria2 | `.aria2/aria2.conf` |
 | AutoHotkey | `scoop/persist/autohotkey/scripts/mouse_binds.ahk` |

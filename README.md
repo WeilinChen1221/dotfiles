@@ -35,7 +35,8 @@ shell history, completion caches, and session files are not tracked.
 
 | Application | Destination |
 | --- | --- |
-| zsh and Starship | `~/.zshenv`, `~/.config/zsh/` |
+| zsh | `~/.zshenv`, `~/.config/zsh/` |
+| Starship | `~/.config/starship.toml` on both platforms |
 | Homebrew | `~/.Brewfile`, rendered from `packages/Brewfile` |
 | Git | `~/.gitconfig`, `~/.gitignore_global` |
 | tmux | `~/.tmux.conf` |
@@ -108,6 +109,7 @@ applying settings:
 chezmoi init https://github.com/WeilinChen1221/dotfiles.git
 Set-Location (Split-Path (chezmoi source-path) -Parent)
 & .\scripts\restore-scoop.ps1
+pwsh74 -NoProfile -File .\scripts\restore-powershell.ps1
 chezmoi diff
 chezmoi apply
 ```
@@ -140,6 +142,96 @@ would copy history into the repository. Its Favorites path uses Scoop's persiste
 directory rather than a versioned installation directory.
 
 macOS ignores the Windows paths. Mac-specific configs are excluded on Windows.
+
+## Shared shell settings
+
+`home/.chezmoidata.toml` is the source for common command shortcuts, fzf discovery,
+fzf appearance and preview commands, and the 100,000-entry history limit. Chezmoi
+renders separate zsh and PowerShell implementations. Edit this data file to change
+a common value, then apply on each machine. Do not re-add the rendered alias or
+fzf files, which would replace their templates with machine-specific output.
+
+Starship uses one `home/dot_config/starship.toml.tmpl` template. Both shells set
+`STARSHIP_CONFIG` to `~/.config/starship.toml`; the previous zsh-local copy is
+removed on macOS. Windows omits the Rust prompt module and receives a Windows
+symbol. The existing macOS Neovim and Rust setup remains unchanged.
+
+Windows loads `~/.config/powershell/profile.ps1` from the PowerShell 7 all-hosts
+profile in `Documents/PowerShell/profile.ps1`. Windows PowerShell 5.1 keeps a
+compatibility loader in its existing profile location. Proxy, Notepad3 editor,
+UTF-8 encoding and literal-path `cdl` navigation are retained. Interactive modules
+load only in a console with unredirected input and output. Startup performs no
+package downloads or module updates.
+
+`packages/PowerShellModules.json` records PSReadLine, PSFzf and posh-git versions.
+Restore them with `scripts/restore-powershell.ps1`, which requires PowerShell 7.4
+or later. The legacy 5.1 shell uses the features of its available modules.
+
+| Key or command | PowerShell behavior |
+| --- | --- |
+| Escape | Vi command mode; insert mode uses a beam cursor, command mode a block |
+| Ctrl+R | Fuzzy command history, inserted without executing |
+| Ctrl+T | Fuzzy files, including hidden files, with bat preview |
+| Ctrl+F | Fuzzy files excluding hidden files; inserted with PowerShell quoting |
+| Alt+C | Fuzzy directory navigation |
+| Ctrl+Left / Ctrl+Right | Move by word |
+| Ctrl+backslash | Toggle history predictions |
+| Up / Down | Substring history search, newest first, with duplicates suppressed |
+| Tab | PowerShell completion menu; posh-git supplies Git completions |
+| Bare directory path, then Enter | Change to that literal directory |
+| `-` | Return to the previous directory in PowerShell 7 |
+| `lf` | Exit lf into its last directory; temporary files are cleaned up |
+| `glog`, `gadog` | Git logs using less; pager variables are restored afterward |
+| `diff file1 file2` | Git's colored file diff; exit code 1 means files differ |
+| `df` | Windows drive capacity in GiB |
+| `stream -ListDevices` | List camera names; use `stream -Camera <name>` to view one |
+
+`ls`, `ll`, `la`, `tree`, `cat`, `grep`, `cx` and `dotfiles` share their fixed
+arguments with zsh. PowerShell implements them as functions and removes conflicting
+built-in aliases. Use `Get-ChildItem`, `Get-Content` and `Compare-Object` when you
+need PowerShell objects instead of native CLI output. `cx` requires a separately
+installed Codex CLI. No Windows Neovim alias or Rust environment is added.
+
+fnm replaces the POSIX-only `nvm.sh` loader on Windows. Install your desired Node
+version with `fnm install <version>` and choose a default with `fnm default <version>`.
+The prompt checks `.nvmrc`, `.node-version` and `package.json` after navigation,
+including `z`, `lf` and `cdl`. Version files and installed Node versions are local
+to your projects and machine. PowerShell's globbing differs from zsh; the zsh
+numeric-glob-sort option has no direct PowerShell equivalent. GPG TTY, man-page
+pager and Homebrew initialization remain macOS-specific.
+
+This Windows machine runs build 19044. PowerShell 7.6.6 fails during runtime
+startup with a CET compatibility error on it. The custom, SHA-256-verified
+`packages/manifests/pwsh74.json` installs PowerShell 7.4.20 as `pwsh74`, alongside
+other PowerShell installations. Windows Terminal defaults to this working
+version and retains the Windows PowerShell 5.1 profile. The package is held;
+PowerShell 7.4 support ends on 2026-11-10. Update Windows before switching to the
+newer runtime, then update the package manifest and Terminal command together.
+
+To sync a committed change on the other machine:
+
+```sh
+chezmoi git -- pull --ff-only
+chezmoi diff
+chezmoi apply
+```
+
+History files, caches, zoxide databases and installed PowerShell modules are
+local state. PowerShell history is under `~/.local/state/powershell/`; the first
+interactive startup copies existing PSReadLine history there if needed. Duplicate
+suppression affects recall, not the contents of the saved file. Leading-space
+commands are excluded while preserving PSReadLine's existing history filter.
+
+Run the shell checks on Windows with:
+
+```powershell
+pwsh74 -NoProfile -File .\scripts\test-shell.ps1
+```
+
+The checks exercise rendered modules, Vi keymaps, literal paths, Unicode,
+pipeline input, fd/fzf discovery, history matching, lf cleanup and prompt hooks.
+Also exercise the interactive pickers in a fresh Terminal tab after changing
+their bindings or preview settings.
 
 ## Excluded data
 

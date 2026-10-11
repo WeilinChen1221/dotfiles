@@ -22,6 +22,10 @@ $apps = @($export.apps | Sort-Object Name | ForEach-Object {
         $json = $manifest | ConvertTo-Json -Depth 30
         [IO.File]::WriteAllText((Join-Path $manifestDir "$($app.Name).json"), ($json -replace "`r`n", "`n") + "`n", $utf8)
         $source = "./packages/manifests/$($app.Name).json"
+    } elseif ($source -match '\.json$' -and
+        (Test-Path -LiteralPath (Join-Path $repoDir "packages\manifests\$($app.Name).json"))) {
+        # Custom files may have been installed from a temporary absolute path.
+        $source = "./packages/manifests/$($app.Name).json"
     }
     [ordered]@{ Name = $app.Name; Version = $app.Version; Source = $source; Info = $app.Info }
 })

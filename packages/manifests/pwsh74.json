@@ -1,0 +1,14 @@
+{
+    "version": "7.4.20",
+    "description": "PowerShell 7.4 for Windows builds that cannot launch the .NET 10 runtime",
+    "homepage": "https://github.com/PowerShell/PowerShell",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.20/PowerShell-7.4.20-win-x64.zip",
+            "hash": "fb88cd3731847006b157978d6c0a426390d346696d91d1ed85b5e5eb88cb2d40"
+        }
+    },
+    "bin": [["pwsh.exe", "pwsh74"]],
+    "notes": "Use pwsh74. This compatibility version is supported until 2026-11-10. Update Windows before moving to PowerShell 7.6."
+}

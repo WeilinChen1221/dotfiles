@@ -1,0 +1,38 @@
+[shell]
+historyCount = 100000
+fzfCommand = 'fd --type f --hidden --strip-cwd-prefix'
+fzfOptions = '--height=60% --layout=reverse --border=rounded --prompt="  " --pointer="  " --preview-window=right:65%:wrap:border-left'
+fzfPreview = 'bat --color=always --style=plain,numbers --line-range=:500 {}'
+
+[[shell.aliases]]
+name = 'ls'
+command = 'eza'
+arguments = ['--icons']
+[[shell.aliases]]
+name = 'll'
+command = 'eza'
+arguments = ['-lh', '--icons', '--git']
+[[shell.aliases]]
+name = 'la'
+command = 'eza'
+arguments = ['-lah', '--icons', '--git']
+[[shell.aliases]]
+name = 'tree'
+command = 'eza'
+arguments = ['--tree', '--icons']
+[[shell.aliases]]
+name = 'cat'
+command = 'bat'
+arguments = []
+[[shell.aliases]]
+name = 'grep'
+command = 'rg'
+arguments = ['--color=auto']
+[[shell.aliases]]
+name = 'cx'
+command = 'codex'
+arguments = ['--yolo']
+[[shell.aliases]]
+name = 'dotfiles'
+command = 'chezmoi'
+arguments = ['git', '--']

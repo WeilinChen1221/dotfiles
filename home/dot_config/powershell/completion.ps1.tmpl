@@ -1,0 +1,53 @@
+if (-not (Get-Module -ListAvailable PSReadLine)) { return }
+Import-Module PSReadLine
+
+# Editing mode resets bindings. Always select it before PSFzf and custom keys.
+Set-PSReadLineOption -EditMode Vi -BellStyle None -MaximumHistoryCount {{ .shell.historyCount }} `
+    -HistoryNoDuplicates -HistorySaveStyle SaveIncrementally -HistorySearchCursorMovesToEnd
+
+$historyDirectory = Join-Path $env:XDG_STATE_HOME 'powershell'
+[void][IO.Directory]::CreateDirectory($historyDirectory)
+$historyPath = Join-Path $historyDirectory "$($Host.Name)_history.txt"
+$oldHistoryPath = (Get-PSReadLineOption).HistorySavePath
+if (-not (Test-Path -LiteralPath $historyPath) -and (Test-Path -LiteralPath $oldHistoryPath)) {
+    Copy-Item -LiteralPath $oldHistoryPath -Destination $historyPath
+}
+Set-PSReadLineOption -HistorySavePath $historyPath
+
+# Keep PSReadLine's existing sensitive-command filter when adding the zsh
+# leading-space rule. Capture it only once if the profile is sourced again.
+if (-not (Get-Variable DotfilesOriginalHistoryHandler -Scope Global -ErrorAction SilentlyContinue)) {
+    $global:DotfilesOriginalHistoryHandler = (Get-PSReadLineOption).AddToHistoryHandler
+}
+Set-PSReadLineOption -AddToHistoryHandler {
+    param([string]$Line)
+    if ([string]::IsNullOrWhiteSpace($Line) -or [char]::IsWhiteSpace($Line[0])) { return $false }
+    if ($global:DotfilesOriginalHistoryHandler) { return $global:DotfilesOriginalHistoryHandler.Invoke($Line) }
+    return $true
+}
+
+# The Windows PowerShell 5.1 bundled module has no prediction/cursor callback.
+$readlineParameters = (Get-Command Set-PSReadLineOption).Parameters
+if ($readlineParameters.ContainsKey('PredictionSource') -and $Host.UI.SupportsVirtualTerminal -and
+    -not [Console]::IsOutputRedirected) {
+    Set-PSReadLineOption -PredictionSource History -PredictionViewStyle InlineView
+}
+if ($readlineParameters.ContainsKey('ViModeChangeHandler')) {
+    Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler {
+        param($Mode)
+        $shape = if ($Mode -eq 'Command') { '2' } else { '6' }
+        [Console]::Write("$([char]27)[$shape q")
+    }
+}
+
+if (Get-Module -ListAvailable posh-git) { Import-Module posh-git }
+# Native PowerShell completion is case-insensitive. Tab selects in a menu.
+Set-PSReadLineKeyHandler -Chord Tab -ViMode Insert -Function MenuComplete
+
+# Register built-in CLI completers without performing installs at startup.
+if (Get-Command chezmoi.exe -CommandType Application -ErrorAction SilentlyContinue) {
+    chezmoi.exe completion powershell | Out-String | Invoke-Expression
+}
+if (Get-Command fnm.exe -CommandType Application -ErrorAction SilentlyContinue) {
+    fnm.exe completions --shell powershell | Out-String | Invoke-Expression
+}

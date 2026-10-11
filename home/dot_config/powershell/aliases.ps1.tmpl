@@ -1,0 +1,48 @@
+# Native .exe names prevent aliases and wrappers from calling themselves.
+# Codex also supports npm's codex.cmd/codex.ps1 launchers.
+{{ range .shell.aliases -}}
+Remove-Item -LiteralPath 'Alias:{{ .name }}' -Force -ErrorAction SilentlyContinue
+function {{ .name }} {
+    if ($MyInvocation.ExpectingInput) {
+        $input | & {{ .command }}{{ if ne .command "codex" }}.exe{{ end }} {{ range .arguments }}'{{ . | replace "'" "''" }}' {{ end }}@args
+    } else {
+        & {{ .command }}{{ if ne .command "codex" }}.exe{{ end }} {{ range .arguments }}'{{ . | replace "'" "''" }}' {{ end }}@args
+    }
+}
+{{ end }}
+function Invoke-DotfilesGitLog {
+    param([string[]]$GitArguments)
+    $previousPager = $env:PAGER
+    $previousGitPager = $env:GIT_PAGER
+    try {
+        # Windows gitconfig sets core.pager=cat; GIT_PAGER takes precedence.
+        $env:PAGER = 'less -F -X'
+        $env:GIT_PAGER = $env:PAGER
+        & git.exe log @GitArguments
+    } finally {
+        $env:PAGER = $previousPager
+        $env:GIT_PAGER = $previousGitPager
+    }
+}
+function glog { Invoke-DotfilesGitLog -GitArguments $args }
+function gadog { Invoke-DotfilesGitLog -GitArguments (@('--all', '--decorate', '--oneline', '--graph') + $args) }
+
+Remove-Item -LiteralPath 'Alias:diff' -Force -ErrorAction SilentlyContinue
+function diff { & git.exe diff --no-index --color=auto @args }
+function df {
+    Get-CimInstance Win32_LogicalDisk -Filter 'DriveType=3' | Select-Object DeviceID,
+        @{Name='SizeGiB'; Expression={[math]::Round($_.Size / 1GB, 1)}},
+        @{Name='UsedGiB'; Expression={[math]::Round(($_.Size - $_.FreeSpace) / 1GB, 1)}},
+        @{Name='FreeGiB'; Expression={[math]::Round($_.FreeSpace / 1GB, 1)}}
+}
+
+# Camera names are local. Discovery lists devices without opening a camera.
+function stream {
+    param([string]$Camera = $env:DOTFILES_CAMERA, [switch]$ListDevices)
+    if ($ListDevices) {
+        & ffmpeg.exe -hide_banner -list_devices true -f dshow -i dummy
+        return
+    }
+    if (-not $Camera) { throw 'Run stream -ListDevices, then stream -Camera <name>.' }
+    & mpv.exe "av://dshow:video=$Camera" --fullscreen --profile=low-latency --untimed @args
+}

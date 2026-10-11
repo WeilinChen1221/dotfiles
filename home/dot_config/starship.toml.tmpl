@@ -2,7 +2,7 @@
 
 add_newline = false
 
-format = "$directory$os$git_branch$git_status$nodejs$rust$golang$php $character"
+format = "$directory$os$git_branch$git_status$nodejs{{ if ne .chezmoi.os "windows" }}$rust{{ end }}$golang$php $character"
 
 [os]
 disabled = false
@@ -14,6 +14,7 @@ Artix   = "󰣇"
 Arch    = "󰣇"
 CachyOS = "󰣇"
 Macos   = ""
+Windows = "󰍲"
 
 [directory]
 format            = "[$path](cyan) "
@@ -40,7 +41,8 @@ symbol = ""
 format = "[$symbol $version](green) "
 
 [rust]
-symbol = ""
+{{ if eq .chezmoi.os "windows" }}disabled = true
+{{ end }}symbol = ""
 format = "[$symbol $version](red) "
 
 [golang]

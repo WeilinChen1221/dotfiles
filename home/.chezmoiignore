@@ -73,6 +73,7 @@ scoop/persist/yt-dlp/ytdlp_plugins/**
 {{- end }}
 
 {{- if ne .chezmoi.os "windows" }}
+.config/powershell/**
 .aria2/**
 scoop/**
 AppData/**
@@ -85,13 +86,17 @@ Documents/WindowsPowerShell/**
 .zshenv
 .config/zsh/**
 .config/cabal/**
-.config/lf/**
 .config/mpv/**
 .config/rift/**
 .config/terminal/**
 .config/gh/**
 .gnupg/**
 Library/**
+{{- end }}
+
+{{- if and (ne .chezmoi.os "darwin") (ne .chezmoi.os "windows") }}
+.config/lf/**
+.config/starship.toml
 {{- end }}
 
 # The arbtt agent needs the locally built executable before it can run.

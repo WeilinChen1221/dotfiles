@@ -4,9 +4,8 @@
     "actions": [],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-    "keybindings": 
-    [
+    "defaultProfile": "{d2b9e965-1026-4bf3-bb73-bdf53b79fe44}",
+    "keybindings": [
         {
             "id": "Terminal.CopyToClipboard",
             "keys": "ctrl+c"
@@ -20,21 +19,26 @@
             "keys": "alt+shift+d"
         }
     ],
-    "newTabMenu": 
-    [
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
-    {
+    "profiles": {
         "defaults": {},
-        "list": 
-        [
+        "list": [
+            {
+                "commandline": {{ printf "%s -NoLogo" (joinPath .chezmoi.homeDir "scoop/apps/pwsh74/current/pwsh.exe") | toJson }},
+                "font": {
+                    "face": "JetBrainsMono Nerd Font Mono"
+                },
+                "guid": "{d2b9e965-1026-4bf3-bb73-bdf53b79fe44}",
+                "hidden": false,
+                "name": "PowerShell"
+            },
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font": 
-                {
+                "font": {
                     "face": "JetBrainsMono Nerd Font Mono"
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
