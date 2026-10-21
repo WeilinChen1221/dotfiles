@@ -1,266 +1,290 @@
 {
-    "buckets":  [
-                    {
-                        "Name":  "confetti",
-                        "Source":  "https://github.com/starise/Scoop-Confetti"
-                    },
-                    {
-                        "Name":  "extras",
-                        "Source":  "https://github.com/ScoopInstaller/Extras"
-                    },
-                    {
-                        "Name":  "main",
-                        "Source":  "https://github.com/ScoopInstaller/Main"
-                    },
-                    {
-                        "Name":  "minecraft",
-                        "Source":  "https://github.com/The-Simples/scoop-minecraft"
-                    },
-                    {
-                        "Name":  "siku",
-                        "Source":  "https://github.com/amorphobia/siku"
-                    }
-                ],
-    "apps":  [
-                 {
-                     "Name":  "7zip",
-                     "Version":  "26.02",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "aria2",
-                     "Version":  "1.37.0-1",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "autohotkey",
-                     "Version":  "2.0.26",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "bat",
-                     "Version":  "0.26.1",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "chezmoi",
-                     "Version":  "2.71.1",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "crystaldiskinfo",
-                     "Version":  "9.9.2",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "Czkawka",
-                     "Version":  "12.0.1",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "dust",
-                     "Version":  "1.2.4",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "everything",
-                     "Version":  "1.4.1.1032",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "eza",
-                     "Version":  "0.23.5",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "fastfetch",
-                     "Version":  "2.66.0",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "fd",
-                     "Version":  "10.5.0",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "ffmpeg-shared",
-                     "Version":  "7.1.1",
-                     "Source":  "./packages/manifests/ffmpeg-shared.json",
-                     "Info":  "Held package"
-                 },
-                 {
-                     "Name":  "fnm",
-                     "Version":  "1.39.0",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "fzf",
-                     "Version":  "0.74.5",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "gh",
-                     "Version":  "2.97.0",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "git-crypt",
-                     "Version":  "0.7.0",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "hwinfo",
-                     "Version":  "8.50-6020",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "innounp",
-                     "Version":  "2.70.1",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "jpegview",
-                     "Version":  "1.0.37",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "kopia",
-                     "Version":  "0.23.1",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "less",
-                     "Version":  "710",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "lf",
-                     "Version":  "r42",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "locale-emulator",
-                     "Version":  "2.5.0.1",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "mingit",
-                     "Version":  "2.55.0.3",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "Mp3tag",
-                     "Version":  "3.35.1",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "mpv",
-                     "Version":  "0.41.0",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "musicbee",
-                     "Version":  "3.6.9403",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "notepad3",
-                     "Version":  "7.26.602.1",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "OpenList",
-                     "Version":  "4.2.4",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "pwsh74",
-                     "Version":  "7.4.20",
-                     "Source":  "./packages/manifests/pwsh74.json",
-                     "Info":  "Held package"
-                 },
-                 {
-                     "Name":  "rclone",
-                     "Version":  "1.75.0",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "ripgrep",
-                     "Version":  "15.2.0",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "sacd-extract",
-                     "Version":  "0.3.9.3",
-                     "Source":  "confetti",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "starship",
-                     "Version":  "1.26.0",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "tre-command",
-                     "Version":  "0.4.0",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "uv",
-                     "Version":  "0.11.11",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "windows-terminal",
-                     "Version":  "1.24.10621.0",
-                     "Source":  "extras",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "yt-dlp",
-                     "Version":  "2026.07.04",
-                     "Source":  "main",
-                     "Info":  ""
-                 },
-                 {
-                     "Name":  "zoxide",
-                     "Version":  "0.10.0",
-                     "Source":  "main",
-                     "Info":  ""
-                 }
-             ]
+  "buckets": [
+    {
+      "Name": "confetti",
+      "Source": "https://github.com/starise/Scoop-Confetti"
+    },
+    {
+      "Name": "extras",
+      "Source": "https://github.com/ScoopInstaller/Extras"
+    },
+    {
+      "Name": "main",
+      "Source": "https://github.com/ScoopInstaller/Main"
+    },
+    {
+      "Name": "minecraft",
+      "Source": "https://github.com/The-Simples/scoop-minecraft"
+    },
+    {
+      "Name": "siku",
+      "Source": "https://github.com/amorphobia/siku"
+    }
+  ],
+  "apps": [
+    {
+      "Name": "7zip",
+      "Version": "26.02",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "aria2",
+      "Version": "1.37.0-1",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "autohotkey",
+      "Version": "2.0.26",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "bat",
+      "Version": "0.26.1",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "chezmoi",
+      "Version": "2.71.1",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "crystaldiskinfo",
+      "Version": "9.9.2",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "Czkawka",
+      "Version": "12.0.1",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "dust",
+      "Version": "1.2.4",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "everything",
+      "Version": "1.4.1.1032",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "eza",
+      "Version": "0.23.5",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "f2",
+      "Version": "2.2.2",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "fastfetch",
+      "Version": "2.66.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "fd",
+      "Version": "10.5.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "ffmpeg-shared",
+      "Version": "7.1.1",
+      "Source": "./packages/manifests/ffmpeg-shared.json",
+      "Info": "Held package"
+    },
+    {
+      "Name": "fnm",
+      "Version": "1.39.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "fzf",
+      "Version": "0.74.5",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "gh",
+      "Version": "2.97.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "git-crypt",
+      "Version": "0.7.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "hwinfo",
+      "Version": "8.50-6020",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "innounp",
+      "Version": "2.70.1",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "jpegview",
+      "Version": "1.0.37",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "kopia",
+      "Version": "0.23.1",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "less",
+      "Version": "710",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "lf",
+      "Version": "r42",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "locale-emulator",
+      "Version": "2.5.0.1",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "mingit",
+      "Version": "2.55.0.3",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "Mp3tag",
+      "Version": "3.35.1",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "mpv",
+      "Version": "0.41.0",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "musicbee",
+      "Version": "3.6.9403",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "notepad3",
+      "Version": "7.26.602.1",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "OpenList",
+      "Version": "4.2.4",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "pwsh",
+      "Version": "7.6.6",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "pwsh74",
+      "Version": "7.4.20",
+      "Source": "./packages/manifests/pwsh74.json",
+      "Info": "Held package"
+    },
+    {
+      "Name": "rclone",
+      "Version": "1.75.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "ripgrep",
+      "Version": "15.2.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "sacd-extract",
+      "Version": "0.3.9.3",
+      "Source": "confetti",
+      "Info": ""
+    },
+    {
+      "Name": "starship",
+      "Version": "1.26.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "sumatrapdf",
+      "Version": "3.6.1",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "tre-command",
+      "Version": "0.4.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "uv",
+      "Version": "0.11.11",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "vcredist2022",
+      "Version": "14.51.36247.0",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "windows-terminal",
+      "Version": "1.24.10621.0",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "yt-dlp",
+      "Version": "2026.07.04",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "zoxide",
+      "Version": "0.10.0",
+      "Source": "main",
+      "Info": ""
+    }
+  ]
 }
