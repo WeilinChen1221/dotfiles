@@ -156,11 +156,22 @@ WordWrap=false
 [Styles]
 [Window]
 2560x1600 HighDpiToolBar=1
+{{- $target := joinPath .chezmoi.homeDir "scoop" "persist" "notepad3" "Notepad3.ini" -}}
+{{- $winProps := list -}}
+{{- if stat $target -}}
+{{-   $winProps = regexFindAll "(?m)^\\d+x\\d+ (PosX|PosY|SizeX|SizeY|Maximized)=.*" (include $target) -1 -}}
+{{- end -}}
+{{- if $winProps -}}
+{{-   range $winProps }}
+{{ . | trim }}
+{{-   end }}
+{{- else }}
 2560x1600 PosX=591
 2560x1600 PosY=449
 2560x1600 SizeX=1125
 2560x1600 SizeY=892
 2560x1600 Maximized=false
+{{- end }}
 2560x1600 Zoom=150
 2560x1600 DPI=144
 ;<ResX>x<ResY> DefaultWindowPosition=
