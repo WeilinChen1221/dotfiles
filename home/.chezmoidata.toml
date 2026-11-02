@@ -33,6 +33,14 @@ name = 'cx'
 command = 'codex'
 arguments = ['--yolo']
 [[shell.aliases]]
+name = 'ag'
+command = 'agy'
+arguments = ['--dangerously-skip-permissions']
+[[shell.aliases]]
+name = 'cc'
+command = 'claude'
+arguments = ['--dangerously-skip-permissions']
+[[shell.aliases]]
 name = 'dotfiles'
 command = 'chezmoi'
 arguments = ['git', '--']

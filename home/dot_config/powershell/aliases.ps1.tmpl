@@ -1,12 +1,12 @@
 # Native .exe names prevent aliases and wrappers from calling themselves.
-# Codex also supports npm's codex.cmd/codex.ps1 launchers.
+# Codex and Claude also support npm's launchers.
 {{ range .shell.aliases -}}
 Remove-Item -LiteralPath 'Alias:{{ .name }}' -Force -ErrorAction SilentlyContinue
 function {{ .name }} {
     if ($MyInvocation.ExpectingInput) {
-        $input | & {{ .command }}{{ if ne .command "codex" }}.exe{{ end }} {{ range .arguments }}'{{ . | replace "'" "''" }}' {{ end }}@args
+        $input | & {{ .command }}{{ if and (ne .command "codex") (ne .command "claude") }}.exe{{ end }} {{ range .arguments }}'{{ . | replace "'" "''" }}' {{ end }}@args
     } else {
-        & {{ .command }}{{ if ne .command "codex" }}.exe{{ end }} {{ range .arguments }}'{{ . | replace "'" "''" }}' {{ end }}@args
+        & {{ .command }}{{ if and (ne .command "codex") (ne .command "claude") }}.exe{{ end }} {{ range .arguments }}'{{ . | replace "'" "''" }}' {{ end }}@args
     }
 }
 {{ end }}
