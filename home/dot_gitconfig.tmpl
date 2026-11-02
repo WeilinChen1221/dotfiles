@@ -8,3 +8,9 @@
     autocrlf = false
 {{ if ne .chezmoi.os "darwin" }}    pager = cat
 {{ end -}}
+{{ if eq .chezmoi.os "windows" -}}
+[credential "helperselector"]
+	selected = manager
+[credential]
+	helpergit = credential-helper-selector
+{{ end -}}
