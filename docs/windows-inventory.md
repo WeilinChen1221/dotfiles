@@ -31,9 +31,10 @@ No applications were installed, upgraded, removed, or restarted during this audi
 | Mp3tag | `scoop/persist/Mp3tag/data/actions/`, `columns.ini`, `usrfields.ini` |
 | beets | `AppData/Roaming/beets/config.yaml` |
 
-aria2 and beets use a templated home directory. The aria2 tracker list was refreshed
-from the running Windows setup. Notepad3 keeps its local recent-file, find, and
-replace history when preferences are applied; that history is absent from source.
+aria2 and beets use a templated home directory. aria2 preserves the local
+bt-tracker list when present to ignore dynamic tracker updates. Notepad3 keeps
+its local window position, dimensions, and recent-file history when preferences
+are applied; these dynamic states are absent from source.
 
 The existing `.config/nvim` files remain managed, though Neovim is not installed
 through Scoop. fastfetch has no custom config file. There is no Windows GitHub CLI
