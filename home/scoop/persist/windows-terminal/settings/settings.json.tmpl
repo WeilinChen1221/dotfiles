@@ -5,7 +5,8 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{d2b9e965-1026-4bf3-bb73-bdf53b79fe44}",
-    "keybindings": [
+    "keybindings": 
+    [
         {
             "id": "Terminal.CopyToClipboard",
             "keys": "ctrl+c"
@@ -19,26 +20,33 @@
             "keys": "alt+shift+d"
         }
     ],
-    "newTabMenu": [
+    "newTabMenu": 
+    [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": {
+    "profiles": 
+    {
         "defaults": {},
-        "list": [
+        "list": 
+        [
             {
                 "commandline": {{ printf "%s -NoLogo" (joinPath .chezmoi.homeDir "scoop/apps/pwsh74/current/pwsh.exe") | toJson }},
-                "font": {
+                "elevate": false,
+                "font": 
+                {
                     "face": "JetBrainsMono Nerd Font Mono"
                 },
                 "guid": "{d2b9e965-1026-4bf3-bb73-bdf53b79fe44}",
                 "hidden": false,
-                "name": "PowerShell"
+                "name": "PowerShell",
+                "startingDirectory": "%USERPROFILE%"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font": {
+                "font": 
+                {
                     "face": "JetBrainsMono Nerd Font Mono"
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -56,6 +64,20 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "commandline": {{ printf "%s --login -i" (joinPath .chezmoi.homeDir "scoop/apps/git/current/bin/bash.exe") | toJson }},
+                "font": 
+                {
+                    "face": "JetBrainsMono Nerd Font Mono"
+                },
+                "guid": "{c1fc794e-a1a7-4f46-a755-e5a9097d0b28}",
+                "hidden": false,
+                "icon": {{ joinPath .chezmoi.homeDir "scoop/apps/git/current/ucrt64/share/git/git-for-windows.ico" | toJson }},
+                "name": "Git Bash",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Git Bash"
             }
         ]
     },
