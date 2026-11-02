@@ -68,6 +68,35 @@ XButton2::f
 XButton1::XButton1
 XButton2::XButton2
 
+; Copy file/folder path
+#HotIf
+^!c::
+{
+    hwnd := WinGetID("A")
+    shell := ComObject("Shell.Application")
+
+    for window in shell.Windows
+    {
+        if (window.HWND != hwnd)
+            continue
+
+        paths := ""
+
+        for item in window.Document.SelectedItems
+        {
+            if (paths != "")
+                paths .= "`r`n"
+
+            paths .= Chr(34) . item.Path . Chr(34)
+        }
+
+        if (paths != "")
+            A_Clipboard := paths
+
+        return
+    }
+}
+
 ; Global default settings
 #HotIf
 XButton1::Enter
