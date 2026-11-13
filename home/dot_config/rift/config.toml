@@ -7,9 +7,9 @@
 # - animation_duration: seconds per animation (>= 0.0, typical 0.15–0.35)
 # - animation_fps: frames per second (0.0 = display refresh rate). 60–120 recommended.
 #   ease_in_circ, ease_out_circ, ease_in_out_circ
-animate = false
+animate = true
 animation_duration = 0.3
-animation_fps = 100.0
+animation_fps = 120.0
 
 # Space activation behavior
 # - If true, spaces start inactive (rift does not manage windows there)
@@ -75,7 +75,7 @@ hot_reload = true
 # This is the default layout mode if there is nothing else configured
 # in the `workspace_rules` section below.
 # You can set different layouts per workspace using `workspace_rules`.
-mode = "traditional"
+mode = "scrolling"
 
 # these settings only apply when layout mode == "master_stack"
 [settings.layout.master_stack]
@@ -97,7 +97,7 @@ new_window_placement = "master"
 # these settings only apply when layout mode == "scrolling"
 [settings.layout.scrolling]
 # width of the active column (0..1 of screen width)
-column_width_ratio = 0.7
+column_width_ratio = 0.9
 # min_column_width_ratio / max_column_width_ratio: clamp bounds used by resize commands
 min_column_width_ratio = 0.3
 max_column_width_ratio = 0.9
@@ -107,18 +107,18 @@ alignment = "center"
 # - "niri": reveal columns only when needed based on navigation direction
 # 			(disrespects alignment setting above)
 # - "anchored": always align focused column according to `alignment`
-focus_navigation_style = "niri"
+focus_navigation_style = "anchored"
 # the scrolling layout tends to function better without animations,
 # so you can disable them if you like
 # animate = false
 
 [settings.layout.scrolling.gestures]
 # Enable horizontal scroll gestures to switch columns
-enabled = false
+enabled = true
 # Invert horizontal direction (swap left/right)
-invert_horizontal = false
+invert_horizontal = true
 # Number of fingers required for gesture
-fingers = 3
+fingers = 4
 # If true, scrolling past the end of the strip will trigger a workspace switch
 #
 # This enables a seemingly endless scroll experience through each workspace's
@@ -256,7 +256,11 @@ reapply_app_rules_on_title_change = false
 #   { workspace = 1, layout = "bsp" },
 #   { workspace = "second", layout = "scrolling" }
 # ]
-workspace_rules = []
+workspace_rules = [
+  { workspace = 0, layout = "scrolling" },
+  { workspace = 1, layout = "bsp" },
+  { workspace = 2, layout = "master_stack" },
+]
 
 
 # Default workspace to activate on startup (0-based index).
