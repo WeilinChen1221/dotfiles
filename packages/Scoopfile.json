@@ -9,6 +9,10 @@
       "Source": "https://github.com/ScoopInstaller/Extras"
     },
     {
+      "Name": "java",
+      "Source": "https://github.com/ScoopInstaller/Java"
+    },
+    {
       "Name": "main",
       "Source": "https://github.com/ScoopInstaller/Main"
     },
@@ -19,12 +23,28 @@
     {
       "Name": "siku",
       "Source": "https://github.com/amorphobia/siku"
+    },
+    {
+      "Name": "sysinternals",
+      "Source": "https://github.com/ScoopInstaller/Sysinternals"
     }
   ],
   "apps": [
     {
       "Name": "7zip",
       "Version": "26.02",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "7zip19.00-helper",
+      "Version": "19.00",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "antigravity-cli",
+      "Version": "1.5.2",
       "Source": "main",
       "Info": ""
     },
@@ -53,6 +73,12 @@
       "Info": ""
     },
     {
+      "Name": "codex",
+      "Version": "0.167.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
       "Name": "crystaldiskinfo",
       "Version": "9.9.2",
       "Source": "extras",
@@ -61,6 +87,18 @@
     {
       "Name": "Czkawka",
       "Version": "12.0.1",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "dark",
+      "Version": "3.14.1",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "dotnet-sdk",
+      "Version": "10.0.403",
       "Source": "main",
       "Info": ""
     },
@@ -119,8 +157,26 @@
       "Info": ""
     },
     {
+      "Name": "gcloud",
+      "Version": "593.0.0",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
       "Name": "gh",
       "Version": "2.97.0",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "ghidra",
+      "Version": "12.2-20261016",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "git",
+      "Version": "2.56.0.3",
       "Source": "main",
       "Info": ""
     },
@@ -128,6 +184,12 @@
       "Name": "git-crypt",
       "Version": "0.7.0",
       "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "handle",
+      "Version": "5.0",
+      "Source": "sysinternals",
       "Info": ""
     },
     {
@@ -173,12 +235,6 @@
       "Info": ""
     },
     {
-      "Name": "mingit",
-      "Version": "2.55.0.3",
-      "Source": "main",
-      "Info": ""
-    },
-    {
       "Name": "Mp3tag",
       "Version": "3.35.1",
       "Source": "extras",
@@ -197,6 +253,12 @@
       "Info": ""
     },
     {
+      "Name": "nodejs",
+      "Version": "26.12.1",
+      "Source": "main",
+      "Info": ""
+    },
+    {
       "Name": "notepad3",
       "Version": "7.26.602.1",
       "Source": "extras",
@@ -205,6 +267,12 @@
     {
       "Name": "OpenList",
       "Version": "4.2.4",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Name": "pi-coding-agent",
+      "Version": "1.4.0",
       "Source": "main",
       "Info": ""
     },
@@ -248,6 +316,18 @@
       "Name": "sumatrapdf",
       "Version": "3.6.1",
       "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "tailscale",
+      "Version": "1.104.5",
+      "Source": "extras",
+      "Info": ""
+    },
+    {
+      "Name": "temurin21-jdk",
+      "Version": "21.0.13-9.0",
+      "Source": "java",
       "Info": ""
     },
     {
