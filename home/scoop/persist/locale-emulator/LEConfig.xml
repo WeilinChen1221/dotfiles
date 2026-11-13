@@ -3,7 +3,7 @@
   <Profiles>
     <Profile Name="Chinese" Guid="a2a2a76e-688e-4da2-a9cd-ec25cd24abb5" MainMenu="false">
       <Parameter></Parameter>
-      <Location>zh</Location>
+      <Location>zh-CN</Location>
       <Timezone>China Standard Time</Timezone>
       <RunAsAdmin>true</RunAsAdmin>
       <RedirectRegistry>true</RedirectRegistry>
