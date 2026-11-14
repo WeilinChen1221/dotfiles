@@ -1,0 +1,14 @@
+# custom_phrase.txt
+# Format: Phrase <Tab> Code <Tab> Weight
+# Ensure you use a real Tab character, not spaces!
+
+碑林区 太乙路街道 咸宁西路28号 西安交通大学兴庆校区	address
+识别图片，以markdown形式、包裹在代码块中输出	ocr
+这是什么问题，该怎么修复	fix
+作为该意思，有什么固定词组	word
+你有什么需要额外知道的信息就询问我	askme
+give me a detailed step-by-step guide	guide
+总结我的需求供 Coding Agent 执行。只需列出核心需求，无需包含代码架构，保持简洁	sum
+排查此段出问题的链路，分析日志，尝试找出根因并制定修复计划	debug
+continue from where you were interrupted	goon
+look into the git log, resolve the git diff , then do the commits and push	commit

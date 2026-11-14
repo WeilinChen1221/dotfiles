@@ -56,6 +56,24 @@ AppData/Roaming/beets/vocalcredit/zero-recording.json
 # arbtt capture logs contain raw window titles and activity timestamps.
 AppData/Roaming/arbtt/capture.log
 
+# Rime user databases, compiled dictionaries, local sync, and runtime state.
+AppData/Roaming/Rime/*.userdb/**
+AppData/Roaming/Rime/build/**
+AppData/Roaming/Rime/trash/**
+AppData/Roaming/Rime/sync/**
+AppData/Roaming/Rime/installation.yaml
+AppData/Roaming/Rime/user.yaml
+AppData/Roaming/Rime/.kopiaignore
+AppData/Roaming/Rime/cn_dicts/**
+AppData/Roaming/Rime/cn_dicts_cell/**
+AppData/Roaming/Rime/en_dicts/**
+AppData/Roaming/Rime/dict_tools/**
+AppData/Roaming/Rime/*.mozc.dict.yaml
+AppData/Roaming/Rime/*.jmdict.dict.yaml
+AppData/Roaming/Rime/*.kanjidic2.dict.yaml
+AppData/Roaming/Rime/luna_pinyin.dict.yaml
+AppData/Roaming/Rime/radical_pinyin.dict.yaml
+
 .aria2/aria2.session
 
 scoop/persist/mpv/portable_config/cache/
