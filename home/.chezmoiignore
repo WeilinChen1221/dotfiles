@@ -53,6 +53,9 @@ AppData/Roaming/beets/vocalcredit/unidentified.json
 AppData/Roaming/beets/vocalcredit/verify.py
 AppData/Roaming/beets/vocalcredit/zero-recording.json
 
+# arbtt capture logs contain raw window titles and activity timestamps.
+AppData/Roaming/arbtt/capture.log
+
 .aria2/aria2.session
 
 scoop/persist/mpv/portable_config/cache/
