@@ -67,6 +67,7 @@ scoop/persist/yt-dlp/yt-dlp-plugins/**
 scoop/persist/yt-dlp/ytdlp_plugins/**
 scoop/persist/bat/syntaxes/**
 scoop/persist/bat/themes/**
+scoop/persist/sumatrapdf/sumatrapdfcache/**
 
 {{- if eq .chezmoi.os "windows" }}
 .zshrc
