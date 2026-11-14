@@ -32,13 +32,20 @@ if ($readlineParameters.ContainsKey('PredictionSource') -and $Host.UI.SupportsVi
     -not [Console]::IsOutputRedirected) {
     Set-PSReadLineOption -PredictionSource History -PredictionViewStyle InlineView
 }
-if ($readlineParameters.ContainsKey('ViModeChangeHandler')) {
-    Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler {
-        param($Mode)
-        $shape = if ($Mode -eq 'Command') { '2' } else { '6' }
-        [Console]::Write("$([char]27)[$shape q")
+function Set-DotfilesViCursor {
+    param($Mode = 'Insert')
+    $escape = [string][char]27
+    $bell = [string][char]7
+    if ($Mode -eq 'Command') {
+        # RGB works in both Windows Terminal and psmux; color names do not.
+        [Console]::Write("${escape}[2 q${escape}]12;#3b82f6${bell}")
+    } else {
+        [Console]::Write("${escape}[6 q${escape}]112${bell}")
     }
 }
+# psmux disables predictions after loading profiles. Restore them once at
+# the first prompt, then respect the user's Ctrl+\ toggle.
+$global:DotfilesPredictionInitialized = $false
 
 if (Get-Module -ListAvailable posh-git) { Import-Module posh-git }
 # Native PowerShell completion is case-insensitive. Tab selects in a menu.

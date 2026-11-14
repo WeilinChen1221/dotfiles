@@ -1,0 +1,11 @@
+# ~/.config/lf/lfrc
+
+# Enable file icons
+set icons true
+
+# Keybindings
+map <enter> open
+
+# Default opener configuration
+# Videos -> mpv, E-books -> Sumatra PDF, Texts -> Notepad3, Images -> JPEGView
+cmd open &"%USERPROFILE%\.config\lf\open.cmd"
