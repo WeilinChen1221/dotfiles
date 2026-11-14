@@ -65,7 +65,6 @@ scoop/persist/musicbee/**
 scoop/persist/Mp3tag/mp3tag.cfg
 scoop/persist/yt-dlp/yt-dlp-plugins/**
 scoop/persist/yt-dlp/ytdlp_plugins/**
-.config/scoop/config.json
 
 {{- if eq .chezmoi.os "windows" }}
 .zshrc

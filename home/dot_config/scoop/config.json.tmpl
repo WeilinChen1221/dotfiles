@@ -1,0 +1,13 @@
+{{- $target := joinPath .chezmoi.homeDir ".config" "scoop" "config.json" -}}
+{{- $lastUpdate := "2026-11-13T18:37:36.5104719-08:00" -}}
+{{- if stat $target -}}
+{{-   $cfg := include $target | fromJson -}}
+{{-   if hasKey $cfg "last_update" -}}
+{{-     $lastUpdate = $cfg.last_update -}}
+{{-   end -}}
+{{- end -}}
+{
+    "last_update":  {{ $lastUpdate | toJson }},
+    "scoop_repo":  "https://github.com/ScoopInstaller/Scoop",
+    "scoop_branch":  "master"
+}
