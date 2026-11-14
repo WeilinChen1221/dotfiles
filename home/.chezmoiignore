@@ -88,7 +88,6 @@ Documents/WindowsPowerShell/**
 .config/mpv/**
 .config/rift/**
 .config/terminal/**
-.config/gh/**
 .gnupg/**
 Library/**
 {{- end }}
